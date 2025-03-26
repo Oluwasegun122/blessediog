@@ -1,12 +1,11 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   output: "export",
   images: {
-    unoptimized: true, // Required for GitHub Pages
+    unoptimized: true,
   },
-  basePath: "/bessediog", // Replace with your GitHub repository name
-  assetPrefix: "/bessediog/", // Required for assets to load correctly
+  basePath: "/blessediog",
+  trailingSlash: true,
 };
 
 export default nextConfig;
