@@ -1,12 +1,8 @@
-name: Deploy Next.js to GitHub Pages
-
+name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - master  # Use master instead of main
-
-permissions:
-  contents: write
+      - master  # or main, depending on your branch name
 
 jobs:
   deploy:
@@ -15,22 +11,16 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
       - name: Install Dependencies
         run: npm install
 
-      - name: Build and Export Next.js
-        run: |
-          npm run build
-          npm run export
-          touch out/.nojekyll  # Prevent GitHub Pages from ignoring static files
+      - name: Build and Export
+        run: npm run build && npm run export
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "./out"  # This is where Next.js exports static files
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages  # Deploy to gh-pages branch
-          folder: out
+        uses: actions/deploy-pages@v4
