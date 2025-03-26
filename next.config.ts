@@ -7,5 +7,5 @@ const nextConfig = {
   basePath: "/blessediog",
   trailingSlash: true,
 };
-
+// add
 export default nextConfig;
