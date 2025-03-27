@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export default function Loading() {
   const [size, setSize] = useState("w-32 h-32"); // Default logo size
-  
+  const [speed, setSpeed] = useState("animate-spin-slow"); // Default animation speed
 
   return (
     <div className="fixed inset-0 flex flex-col items-center justify-center h-screen bg-white">
@@ -23,7 +23,7 @@ export default function Loading() {
       </div>
 
       {/* Controls */}
-      <div className="hidden mt-6 space-x-4">
+      <div className="mt-6 space-x-4 flex">
         <button
           onClick={() => setSize("w-16 h-16")}
           className="px-4 py-2 bg-blue-500 text-white rounded"
@@ -41,6 +41,26 @@ export default function Loading() {
           className="px-4 py-2 bg-red-500 text-white rounded"
         >
           Large
+        </button>
+
+        {/* Speed Control Buttons */}
+        <button
+          onClick={() => setSpeed("animate-spin-slow")}
+          className="px-4 py-2 bg-yellow-500 text-white rounded"
+        >
+          Slow
+        </button>
+        <button
+          onClick={() => setSpeed("animate-spin")}
+          className="px-4 py-2 bg-purple-500 text-white rounded"
+        >
+          Normal
+        </button>
+        <button
+          onClick={() => setSpeed("animate-spin-fast")}
+          className="px-4 py-2 bg-pink-500 text-white rounded"
+        >
+          Fast
         </button>
       </div>
     </div>
