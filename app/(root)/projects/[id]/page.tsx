@@ -44,7 +44,7 @@ const ProjectPage = () => {
 
   return (
     <div className="pt-20 px-5">
-      <h1 className="text-4xl">Project</h1>
+      <h1 className="text-4xl">Project {id}</h1>
       <img src={project.image} alt={project.title} className="w-full h-auto" />
       <h1 className="text-2xl font-bold">{project.title}</h1>
       <p className="text-lg">{project.contents}</p>
