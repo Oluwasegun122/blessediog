@@ -1,6 +1,10 @@
 import ProjectDetail from "@/app/components/ProjectDetail";
 
-export default function ProjectPage({ params }: { params: { id: string } }) {
+interface PageProps {
+  params: { id: string };
+}
+
+export default function ProjectPage({ params }: PageProps) {
   return <ProjectDetail projectId={params.id} />;
 }
 
