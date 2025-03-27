@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <div className="">
@@ -10,7 +12,7 @@ export default function Home() {
         //     {"url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)"},
         // }}
       >
-        <img
+        <Image
           className="hero min-h-screen"
           src="./images/pro_img2.jpeg"
           alt=""
