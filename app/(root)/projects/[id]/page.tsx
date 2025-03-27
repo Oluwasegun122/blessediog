@@ -1,19 +1,20 @@
 import ProjectDetail from "@/app/components/ProjectDetail";
 
-interface PageProps {
+export default async function ProjectPage({
+  params,
+}: {
   params: { id: string };
-}
-
-export default function ProjectPage({ params }: PageProps) {
+}) {
+  // Now the component is async so that Next.js can handle props that might be promises
   return <ProjectDetail projectId={params.id} />;
 }
 
-// ✅ Ensure correct static params function
+// This function pre-generates static paths for each project.
 export async function generateStaticParams() {
-  const res = await fetch("https://your-api.com/api/projects"); // Replace with actual API
+  const res = await fetch("https://api/projects"); // Replace with your actual API URL
   const projects = await res.json();
 
   return projects.map((project: { id: string }) => ({
-    id: project.id.toString(), // Ensure it's a string
+    id: project.id.toString(),
   }));
 }
