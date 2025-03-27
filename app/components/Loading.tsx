@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { useState } from "react";
 
 export default function Loading() {
@@ -15,11 +15,11 @@ export default function Loading() {
         />
 
         {/* Blinking Logo */}
-        {/* <img
+        <Image
           src="/image/channels4_profile.jpg"
           alt="Loading..."
           className={`rounded-full ${size} animate-pulse`}
-        /> */}
+        />
       </div>
 
       {/* Controls */}
