@@ -40,7 +40,7 @@ const ProjectPage = () => {
   }, [id, router]);
 
   if (loading) return <Loading />;
-  if (!project) return <p>Project not found</p>;
+  if (!project) return <p>Project not found Thank you</p>;
 
   return (
     <div className="pt-20 px-5">
