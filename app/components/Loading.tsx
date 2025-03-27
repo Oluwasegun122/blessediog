@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export default function Loading() {
   const [size, setSize] = useState("w-32 h-32"); // Default logo size
-  const [speed, setSpeed] = useState("animate-spin"); // Animation speed
+  
 
   return (
     <div className="fixed inset-0 flex flex-col items-center justify-center h-screen bg-white">
