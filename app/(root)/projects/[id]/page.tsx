@@ -1,4 +1,5 @@
 import ProjectDetail from "@/app/components/ProjectDetail"; 
+import { PageProps } from "next";
 
 interface Project {
   id: string;
@@ -17,6 +18,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function ProjectPage({ params }: { params: { id: string } }) {
+// ✅ Fix: Use `PageProps`
+export default function ProjectPage({ params }: PageProps<{ id: string }>) {
   return <ProjectDetail projectId={params.id} />;
 }
