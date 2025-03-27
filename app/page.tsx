@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <div>
-      <h1>Oluwasegun</h1>
+      <h1 className="text-4xl">Oluwasegun</h1>
     </div>
   );
 }
