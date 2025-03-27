@@ -1,24 +1,20 @@
-import ProjectDetail from "@/app/components/ProjectDetail"; 
-import { PageProps } from "next";
+import ProjectDetail from "@/app/components/ProjectDetail";
 
-interface Project {
-  id: string;
-  image: string;
-  title: string;
-  contents: string;
+interface ProjectPageProps {
+  params: { id: string };
 }
 
-// ✅ Fetch project data at build time
-export async function generateStaticParams() {
-  const res = await fetch("https://api/projects"); // Replace with actual API
-  const projects: Project[] = await res.json();
-
-  return projects.map((project) => ({
-    id: project.id.toString(), // Ensure ID is a string
-  }));
-}
-
-// ✅ Fix: Use `PageProps`
-export default function ProjectPage({ params }: PageProps<{ id: string }>) {
+// ✅ Define the `ProjectPage` function correctly
+export default function ProjectPage({ params }: ProjectPageProps) {
   return <ProjectDetail projectId={params.id} />;
+}
+
+// ✅ Ensure `generateStaticParams` is correctly defined
+export async function generateStaticParams() {
+  const res = await fetch("https://your-api.com/api/projects"); // Replace with actual API URL
+  const projects = await res.json();
+
+  return projects.map((project: { id: string }) => ({
+    id: project.id.toString(), // Ensure ID is always a string
+  }));
 }
