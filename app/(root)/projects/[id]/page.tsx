@@ -1,7 +1,5 @@
 "use client";
 import Image from "next/image";
-
-
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Loading from "@/app/components/Loading";
@@ -42,16 +40,25 @@ const ProjectPage = () => {
   }, [id, router]);
 
   if (loading) return <Loading />;
-  if (!project) return <p>Project not found Thank you</p>;
+  if (!project) return <p>Project not found</p>;
 
   return (
     <div className="pt-20 px-5">
-      <h1 className="text-4xl">Project {id}</h1>
-      <Image src={project.image} alt={project.title} className="w-full h-auto" />
-      <h1 className="text-2xl font-bold">{project.title}</h1>
+      <h1 className="text-4xl font-bold">{project.title}</h1>
+      <Image src={project.image} alt={project.title} width={600} height={400} className="w-full h-auto" />
       <p className="text-lg">{project.contents}</p>
     </div>
   );
 };
 
 export default ProjectPage;
+
+// ✅ Generate Static Params for SSG (Fixes Missing `generateStaticParams()` Error)
+export async function generateStaticParams() {
+  const res = await fetch("https://api/projects"); // Replace with your API
+  const projects: Project[] = await res.json();
+
+  return projects.map((project) => ({
+    id: project.id.toString(), // Ensure it's a string
+  }));
+}
