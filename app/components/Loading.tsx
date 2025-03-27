@@ -16,7 +16,7 @@ export default function Loading() {
 
         {/* Blinking Logo */}
         <Image
-          src="/image/channels4_profile.jpg"
+          src="/image/img.jpg"
           alt="Loading..."
           className={`rounded-full ${size} animate-pulse`}
         />
