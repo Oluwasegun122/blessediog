@@ -1,4 +1,5 @@
 import Image from "next/image";
+import AboutMe from "./components/AboutMe";
 
 export default function Home() {
   return (
@@ -38,7 +39,7 @@ export default function Home() {
           </h2>
         </div>
 
-        <h1>aboute</h1>
+        <AboutMe />
       </div>
       {/* cards */}
 
