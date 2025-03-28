@@ -4,22 +4,6 @@ import Link from "next/link";
 export default function AboutMe() {
   return (
     <div className="flex flex-col md:flex-row items-center bg-white p-6 rounded-lg shadow-lg w-full md:w-3/4 mx-auto">
-      {/* Image Section */}
-      <div className="relative flex flex-col items-center mb-6 md:mb-0 md:mr-6">
-        <div className="ring-4 ring-blue-500 rounded-t-full overflow-hidden">
-          <Image
-            src="/images/profile.jpg"
-            alt="Profile Picture"
-            width={150}
-            height={150}
-            className="rounded-t-full object-cover"
-          />
-        </div>
-        <div className="bg-blue-500 text-white px-4 py-2 -mt-2 rounded-b-lg shadow-md">
-          <h2 className="text-lg font-bold">Faith Dasola Obajafa</h2>
-        </div>
-      </div>
-
       {/* Text Section */}
       <div className="text-center md:text-left max-w-lg">
         <p className="text-gray-700 text-lg mb-4">
@@ -34,6 +18,21 @@ export default function AboutMe() {
         >
           Read More
         </Link>
+      </div>
+      {/* Image Section */}
+      <div className="relative flex flex-col items-center mb-6 md:mb-0 md:mr-6">
+        <div className="ring-4 ring-blue-500 rounded-t-full overflow-hidden">
+          <Image
+            src="./images/img.jpg"
+            alt="Profile Picture"
+            width={150}
+            height={150}
+            className="rounded-t-full object-cover"
+          />
+        </div>
+        <div className="bg-blue-500 text-white px-4 py-2 -mt-2 rounded-b-lg shadow-md">
+          <h2 className="text-lg font-bold">Faith Dasola Obajafa</h2>
+        </div>
       </div>
     </div>
   );
