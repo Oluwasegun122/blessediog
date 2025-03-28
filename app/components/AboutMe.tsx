@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function AboutCard() {
+export default function AboutMe() {
   return (
     <div className="flex flex-col md:flex-row items-center bg-white p-6 rounded-lg shadow-lg w-full md:w-3/4 mx-auto">
       {/* Image Section */}
