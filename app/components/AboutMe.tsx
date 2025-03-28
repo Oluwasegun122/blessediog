@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AboutMe() {
   return (
@@ -6,7 +7,7 @@ export default function AboutMe() {
       <div className="flex justify-center mb-4">
         <div className="avatar md:hidden flex-col items-center">
           <div className="ring-primary ring-offset-base-100 w-24 rounded-full ring ring-offset-2">
-            <img src="./images/img.jpg" />
+            <Image src="./images/img.jpg" alt="" />
           </div>
           <h1 className="text-2xl md:text-5xl font-bold">
             I'm Faith Dasola Obajafa
@@ -16,8 +17,9 @@ export default function AboutMe() {
       <div className=" hero bg-base-200 rounded-lg">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="ring-2 ring-blue-700 w-3xl rounded-t-full p-2">
-            <img
-              src="/bessediogportfolio/images/img.jpg"
+            <Image
+              src="./images/img.jpg"
+              alt=""
               className="hidden md:block rounded-t-full pb-1"
             />
             <div className="ring-0 bg-blue-500 flex justify-center items-center p-2">
