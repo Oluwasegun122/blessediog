@@ -1,53 +1,39 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function AboutMe() {
+export default function AboutCard() {
   return (
-    <div className="p-5 mx-0 md:mx-60">
-      <div className="flex justify-center mb-4">
-        <div className="avatar md:hidden flex-col items-center">
-          <div className="ring-primary ring-offset-base-100 w-24 rounded-full ring ring-offset-2">
-            {/* ✅ Corrected Image Path & Added width/height */}
-            <Image
-              src="/images/img.jpg"
-              alt="Profile Picture"
-              width={100}
-              height={100}
-            />
-          </div>
-          <h1 className="text-2xl md:text-5xl font-bold">
-            I&apos;m Faith Dasola Obajafa
-          </h1>
+    <div className="flex flex-col md:flex-row items-center bg-white p-6 rounded-lg shadow-lg w-full md:w-3/4 mx-auto">
+      {/* Image Section */}
+      <div className="relative flex flex-col items-center mb-6 md:mb-0 md:mr-6">
+        <div className="ring-4 ring-blue-500 rounded-t-full overflow-hidden">
+          <Image
+            src="/images/profile.jpg"
+            alt="Profile Picture"
+            width={150}
+            height={150}
+            className="rounded-t-full"
+          />
+        </div>
+        <div className="bg-blue-500 text-white px-4 py-2 mt-[-10px] rounded-b-lg shadow-md">
+          <h2 className="text-lg font-bold">Faith Dasola Obajafa</h2>
         </div>
       </div>
-      <div className="hero bg-base-200 rounded-lg">
-        <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="ring-2 ring-blue-700 w-3xl rounded-t-full p-2">
-            {/* ✅ Corrected Image Path & Added width/height */}
-            <Image
-              src="/images/img.jpg"
-              alt="Profile Picture"
-              width={300}
-              height={300}
-              className="hidden md:block rounded-t-full pb-1"
-            />
-            <div className="ring-0 bg-blue-500 flex justify-center items-center p-2">
-              <h1 className="text-white font-bold">Obajafa Faith Dasola</h1>
-            </div>
-          </div>
-          <div>
-            <p className="py-6 text-2xl">
-              Hi, I&apos;m Faith Obajafa, a detail-driven data analyst with a
-              strong passion for uncovering hidden trends and insights. With 5
-              years of experience in data analysis, I excel at transforming
-              complex data into actionable recommendations that drive business
-              growth.
-            </p>
-            <Link href="/about_me" className="btn btn-primary">
-              Read More
-            </Link>
-          </div>
-        </div>
+
+      {/* Text Section */}
+      <div className="text-center md:text-left max-w-lg">
+        <p className="text-gray-700 text-lg mb-4">
+          Hi, I'm Faith Obajafa, a detail-driven data analyst with a strong
+          passion for uncovering hidden trends and insights. With 5 years of
+          experience in data analysis, I excel at transforming complex data into
+          actionable recommendations that drive business growth.
+        </p>
+        <Link
+          href="/about_me"
+          className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600"
+        >
+          Read More
+        </Link>
       </div>
     </div>
   );
