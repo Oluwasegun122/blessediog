@@ -4,22 +4,19 @@ import AboutMe from "./components/AboutMe";
 export default function Home() {
   return (
     <div className="">
-      {/* slide section */}
       <div
-        className="hero min-h-screen"
-
-        // style={{
-        //   backgroundImage:
-        //     {"url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)"},
-        // }}
+        className="hero min-h-screen relative"
+        style={{
+          backgroundImage: "url('/images/pro_img2.jpeg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       >
-        <Image
-          className="hero min-h-screen"
-          src="./images/pro_img2.jpeg"
-          alt=""
-        />
-        <div className="hero-overlay bg-opacity-60"></div>
-        <div className="hero-content text-neutral-content text-center">
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+
+        {/* Hero Content */}
+        <div className="hero-content text-neutral-content text-center relative z-10">
           <div className="max-w-md">
             <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
             <p className="mb-5">

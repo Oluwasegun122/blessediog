@@ -3,9 +3,9 @@ import Link from "next/link";
 
 export default function AboutMe() {
   return (
-    <div className="flex flex-col md:flex-row items-center bg-white p-6 rounded-lg shadow-lg w-full md:w-3/4 mx-auto">
+    <div className="flex flex-col md:flex-row justify-center items-center bg-white p-6 rounded-lg shadow-lg w-full md:w-3/4 mx-60">
       {/* Text Section */}
-      <div className="text-center md:text-left max-w-lg">
+      <div className="text-center items-center md:text-left max-w-lg">
         <p className="text-gray-700 text-lg mb-4">
           Hi, I&apos;m Faith Obajafa, a detail-driven data analyst with a strong
           passion for uncovering hidden trends and insights. With 5 years of
