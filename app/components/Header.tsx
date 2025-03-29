@@ -30,7 +30,7 @@ const Header = () => {
 
         {/* Right Edge Text */}
         <div className="hidden md:block text-gray-700 text-lg font-semibold">
-          Core
+          call
         </div>
 
         {/* Mobile Menu Button */}
