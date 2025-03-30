@@ -16,6 +16,12 @@ const projects: Record<
     title: "Project Two",
     contents: "This is the content for Project Two.",
   },
+  "3": {
+    id: "3",
+    image: "/images/project.jpg",
+    title: "Project Three",
+    contents: "This is the content for Project Three.",
+  },
 };
 
 // ✅ Fix: Handle `params` as a Promise
