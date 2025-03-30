@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Loading from "@/app/components/Loading";
+import Footer from "@/app/components/Footer";
 
 interface Project {
   id: number;
@@ -69,6 +70,7 @@ export default function ProjectsPage() {
           ))}
         </div>
       )}
+      <Footer />
     </div>
   );
 }

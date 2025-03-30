@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Loading from "@/app/components/Loading";
+import Footer from "@/app/components/Footer";
 
 interface AboutData {
   name: string;
@@ -67,6 +68,7 @@ const AboutPage = () => {
       <h2 className="text-2xl font-semibold mb-2">Contact</h2>
       <p>Email: {data.contact.email}</p>
       <p>Phone: {data.contact.phone}</p>
+      <Footer />
     </div>
   );
 };

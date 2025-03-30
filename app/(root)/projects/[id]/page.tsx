@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import Loading from "@/app/components/Loading";
+import Footer from "@/app/components/Footer";
 
 interface Project {
   id: string;
@@ -60,6 +61,7 @@ const ProjectPage = () => {
       <p className="text-lg text-gray-700 leading-relaxed">
         {project.contents}
       </p>
+      <Footer />
     </div>
   );
 };
