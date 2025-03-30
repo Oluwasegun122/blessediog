@@ -28,7 +28,7 @@ const Header = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile phone Menu */}
       {isOpen && (
         <div className="md:hidden bg-white shadow-md text-center">
           <Link href="/" className="block py-2 text-gray-700 hover:text-blue-500" onClick={() => setIsOpen(false)}>Home</Link>
