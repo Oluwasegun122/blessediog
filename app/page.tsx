@@ -49,7 +49,7 @@ export default function Home() {
       <CertificationsSection />
 
       {/* Footer */}
-      <footer className="py-6 text-center bg-gray-100">
+      <footer className="py-0">
         <Footer />
       </footer>
     </div>
