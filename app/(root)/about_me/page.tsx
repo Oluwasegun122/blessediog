@@ -30,7 +30,7 @@ const AboutPage = () => {
   if (!data) return <p>Failed to load data.</p>;
 
   return (
-    <div className="p-10">
+    <div className="px-5">
       <h1 className="text-4xl font-bold mb-4">About {data.name}</h1>
       <p className="text-lg mb-6">{data.bio}</p>
 
