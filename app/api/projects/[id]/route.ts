@@ -6,7 +6,7 @@ const projects: Record<
 > = {
   "1": {
     id: "1",
-    image: "/bessediogportfolio/images/project.jpg",
+    image: "/images/project.jpg",
     title: "Project One",
     contents: "This is the content for Project One.",
   },

@@ -58,7 +58,7 @@ export default function ProjectsPage() {
                   {project.description}
                 </p>
                 <Link
-                  href={`/projects/${project.slug}`}
+                  href={`/projects/${project.id}`}
                   className="mt-4 inline-block bg-blue-500 text-white px-4 py-2 rounded-md shadow-md hover:bg-blue-600"
                 >
                   Read More
