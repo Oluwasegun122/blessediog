@@ -22,6 +22,13 @@ const projects = [
     description: "A management system for student records and payments.",
     slug: "school-portal",
   },
+  {
+    id: 4,
+    title: "Portfolio",
+    image: "/images/project.jpg",
+    description: " portfolio for data analyst .",
+    slug: "portfolio",
+  },
 ];
 
 export async function GET() {
