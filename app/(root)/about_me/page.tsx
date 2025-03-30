@@ -32,6 +32,7 @@ const AboutPage = () => {
   if (!data) return <p>Failed to load data.</p>;
 
   return (
+    <>
     <div className="px-5">
       <h1 className="text-3xl md:text-4xl font-bold mb-4">
         About: {data.name}
@@ -68,8 +69,9 @@ const AboutPage = () => {
       <h2 className="text-2xl font-semibold mb-2">Contact</h2>
       <p>Email: {data.contact.email}</p>
       <p>Phone: {data.contact.phone}</p>
-      <Footer />
     </div>
+    <Footer />
+    </>
   );
 };
 
