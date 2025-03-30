@@ -9,7 +9,7 @@ export default function Home() {
     <div>
       {/* Hero Section */}
       <div className="relative min-h-screen flex items-center justify-center bg-black">
-        <div className="absolute inset-0">
+        <div className="absolute inset-32">
           <Image
             src="/images/pro_img2.jpeg"
             alt="Hero Background"
