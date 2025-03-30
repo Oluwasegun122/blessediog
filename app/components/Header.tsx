@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaLinkedin, FaTimes } from "react-icons/fa";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +16,7 @@ const Header = () => {
         </Link>
 
         {/* Centered Navigation for Desktop */}
-        <div className="hidden md:flex bg-white bg-opacity-20 px-6 py-2 rounded-full space-x-6">
+        <div className="hidden md:flex bg-gray-300 bg-opacity-20 px-6 py-2 rounded-full space-x-6">
           <Link href="/" className="hover:text-gray-300">
             Home
           </Link>
@@ -29,7 +29,9 @@ const Header = () => {
         </div>
 
         {/* Right Edge Text */}
-        <div className="hidden md:block text-lg font-semibold">Call</div>
+        <div className="hidden md:block text-lg font-semibold">
+          <FaLinkedin />
+        </div>
 
         {/* Mobile Menu Button */}
         <button

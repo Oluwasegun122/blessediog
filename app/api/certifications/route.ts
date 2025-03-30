@@ -6,14 +6,14 @@ const certifications = [
     title: "Full-Stack Development Certification",
     issuer: "Coursera",
     date: "Jan 2023",
-    image: "/images/cert1.jpg",
+    image: "/images/pro_img1.jpg",
   },
   {
     id: 2,
     title: "Data Analysis Certification",
     issuer: "edX",
     date: "Mar 2023",
-    image: "/images/cert2.jpg",
+    image: "/images/pro_img1.jpg",
   },
   {
     id: 3,
