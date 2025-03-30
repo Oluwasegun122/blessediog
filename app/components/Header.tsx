@@ -17,13 +17,13 @@ const Header = () => {
 
         {/* Centered Navigation for Desktop */}
         <div className="hidden md:flex bg-gray-300 bg-opacity-20 px-6 py-2 rounded-full space-x-6">
-          <Link href="/" className="hover:text-gray-300">
+          <Link href="/" className="hover:text-white">
             Home
           </Link>
-          <Link href="/projects" className="hover:text-gray-300">
+          <Link href="/projects" className="hover:text-white">
             Projects
           </Link>
-          <Link href="/about_me" className="hover:text-gray-300">
+          <Link href="/about_me" className="hover:text-white">
             About Me
           </Link>
         </div>

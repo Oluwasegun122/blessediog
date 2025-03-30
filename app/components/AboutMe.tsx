@@ -5,7 +5,7 @@ export default function AboutMe() {
   return (
     <div className="flex flex-col md:flex-row justify-center items-center bg-white p-6 rounded-lg shadow-lg w-full max-w-3xl mx-auto">
       {/* Image Section */}
-      <div className="relative flex flex-col items-center mb-6 md:mb-0 md:mr-6">
+      <div className="relative md:float-right flex flex-col items-center mb-6 md:mb-0 md:mr-6">
         <div className="w-40 h-40 ring-4 ring-blue-500 rounded-full overflow-hidden">
           <Image
             src="/images/img.jpg"
