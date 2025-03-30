@@ -44,7 +44,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-center rounded-b-lg overflow-hidden transition-transform transform origin-top ${
+        className={`md:hidden bg-white via-purple-600 to-pink-500 text-center rounded-b-lg overflow-hidden transition-transform transform origin-top ${
           isOpen ? "scale-y-100" : "scale-y-0"
         }`}
       >
