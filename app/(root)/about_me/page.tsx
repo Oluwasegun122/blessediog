@@ -31,7 +31,9 @@ const AboutPage = () => {
 
   return (
     <div className="px-5">
-      <h1 className="text-4xl font-bold mb-4">About {data.name}</h1>
+      <h1 className="text-3xl md:text-4xl font-bold mb-4">
+        About: {data.name}
+      </h1>
       <p className="text-lg mb-6">{data.bio}</p>
 
       <h2 className="text-2xl font-semibold mb-2">Skills</h2>
