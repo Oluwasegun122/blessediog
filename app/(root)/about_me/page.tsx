@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Loading from "@/app/components/Loading";
 
 interface AboutData {
   name: string;
@@ -26,7 +27,7 @@ const AboutPage = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loading />;
   if (!data) return <p>Failed to load data.</p>;
 
   return (

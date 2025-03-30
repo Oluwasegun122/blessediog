@@ -20,7 +20,7 @@ const certifications = [
     title: "UI/UX Design Certification",
     issuer: "Udemy",
     date: "May 2023",
-    image: "/images/cert3.jpg",
+    image: "/images/pro_img1.jpg",
   },
   // more certifications if needed...
 ];
