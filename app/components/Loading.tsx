@@ -23,7 +23,7 @@ export default function Loading() {
       </div>
 
       {/* Controls */}
-      <div className="mt-6 space-x-4 flex">
+      <div className="mt-6 space-x-4 flex hidden">
         <button
           onClick={() => setSize("w-16 h-16")}
           className="px-4 py-2 bg-blue-500 text-white rounded"

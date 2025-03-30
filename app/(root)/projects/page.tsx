@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Loading from "@/app/components/Loading";
 
 interface Project {
   id: number;
@@ -36,7 +37,7 @@ export default function ProjectsPage() {
     <div className="p-6 mx-auto max-w-5xl">
       <h1 className="text-3xl font-bold mb-6 text-center">Projects</h1>
       {loading ? (
-        <p className="text-center">Loading projects...</p>
+        <Loading />
       ) : (
         <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
