@@ -35,6 +35,7 @@ export default function ProjectsPage() {
   }, []);
 
   return (
+    <>
     <div className="px-5 mx-auto max-w-5xl">
       <h1 className="text-3xl font-bold mb-6 text-center">Projects</h1>
       {loading ? (
@@ -70,7 +71,9 @@ export default function ProjectsPage() {
           ))}
         </div>
       )}
-      <Footer />
+    
     </div>
+    <Footer />
+    </>
   );
 }
