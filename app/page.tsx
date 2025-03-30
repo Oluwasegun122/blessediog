@@ -2,13 +2,11 @@ import Image from "next/image";
 import AboutMe from "./components/AboutMe";
 import ProjectsSection from "./components/ProjectsSection";
 import CertificationsSection from "./components/CertificationsSection";
-import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
     <div>
-      <Header />
-
       {/* Hero Section */}
       <div className="relative min-h-screen flex items-center justify-center bg-black">
         <div className="absolute inset-0">
@@ -52,9 +50,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="py-6 text-center bg-gray-100">
-        <p className="text-gray-600">
-          © {new Date().getFullYear()} BlessedIOG. All rights reserved.
-        </p>
+        <Footer />
       </footer>
     </div>
   );

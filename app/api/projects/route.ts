@@ -18,7 +18,7 @@ const projects = [
   {
     id: 3,
     title: "School Portal",
-    image: "/images/projectl.jpg",
+    image: "/images/project.jpg",
     description: "A management system for student records and payments.",
     slug: "school-portal",
   },
