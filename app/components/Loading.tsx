@@ -4,11 +4,7 @@ import { useState } from "react";
 
 export default function Loading() {
   const [size, setSize] = useState("w-32 h-32"); // Default logo size
-<<<<<<< HEAD
   const [speed, setSpeed] = useState("animate-spin-slow"); // Default animation speed
-=======
-  const [speed, setSpeed] = useState("animate-spin"); // Animation speed
->>>>>>> 01ae528b09dc9ea5701947b5e5d442c0c838d035
 
   return (
     <div className="fixed inset-0 flex flex-col items-center justify-center h-screen bg-white">
@@ -20,22 +16,14 @@ export default function Loading() {
 
         {/* Blinking Logo */}
         <Image
-<<<<<<< HEAD
           src="/image/img.jpg"
-=======
-          src="/image/channels4_profile.jpg"
->>>>>>> 01ae528b09dc9ea5701947b5e5d442c0c838d035
           alt="Loading..."
           className={`rounded-full ${size} animate-pulse`}
         />
       </div>
 
       {/* Controls */}
-<<<<<<< HEAD
       <div className="mt-6 space-x-4 flex">
-=======
-      <div className="hidden mt-6 space-x-4">
->>>>>>> 01ae528b09dc9ea5701947b5e5d442c0c838d035
         <button
           onClick={() => setSize("w-16 h-16")}
           className="px-4 py-2 bg-blue-500 text-white rounded"
@@ -54,7 +42,6 @@ export default function Loading() {
         >
           Large
         </button>
-<<<<<<< HEAD
 
         {/* Speed Control Buttons */}
         <button
@@ -75,8 +62,6 @@ export default function Loading() {
         >
           Fast
         </button>
-=======
->>>>>>> 01ae528b09dc9ea5701947b5e5d442c0c838d035
       </div>
     </div>
   );

@@ -1,13 +1,9 @@
 import Image from "next/image";
-<<<<<<< HEAD
 import AboutMe from "./components/AboutMe";
-=======
->>>>>>> 01ae528b09dc9ea5701947b5e5d442c0c838d035
 
 export default function Home() {
   return (
     <div className="">
-<<<<<<< HEAD
       <div className="relative min-h-screen flex items-center justify-center bg-black">
         {/* Background Image */}
         <div className="absolute inset-0">
@@ -35,32 +31,6 @@ export default function Home() {
           <button className="btn btn-primary px-6 py-3 text-lg">
             Get Started
           </button>
-=======
-      {/* slide section */}
-      <div
-        className="hero min-h-screen"
-
-        // style={{
-        //   backgroundImage:
-        //     {"url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)"},
-        // }}
-      >
-        <Image
-          className="hero min-h-screen"
-          src="./images/pro_img2.jpeg"
-          alt=""
-        />
-        <div className="hero-overlay bg-opacity-60"></div>
-        <div className="hero-content text-neutral-content text-center">
-          <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-            <p className="mb-5">
-              I use cutting-edge tools and techniques to turn complex data sets
-              into actionable insights.
-            </p>
-            <button className="btn btn-primary">Get Started</button>
-          </div>
->>>>>>> 01ae528b09dc9ea5701947b5e5d442c0c838d035
         </div>
       </div>
       {/* about me section */}
@@ -72,11 +42,7 @@ export default function Home() {
           </h2>
         </div>
 
-<<<<<<< HEAD
         <AboutMe />
-=======
-        <h1>aboute</h1>
->>>>>>> 01ae528b09dc9ea5701947b5e5d442c0c838d035
       </div>
       {/* cards */}
 

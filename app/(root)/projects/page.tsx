@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 "use client";
 
 import { useEffect, useState } from "react";
@@ -69,13 +68,6 @@ export default function ProjectsPage() {
           ))}
         </div>
       )}
-=======
-export default function page() {
-  return (
-    <div className="pt-20 px-5">
-      <h1 className="text-4xl">My Projects</h1>
-      Project
->>>>>>> 01ae528b09dc9ea5701947b5e5d442c0c838d035
     </div>
   );
 }

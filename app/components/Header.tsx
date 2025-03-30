@@ -30,11 +30,7 @@ const Header = () => {
 
         {/* Right Edge Text */}
         <div className="hidden md:block text-gray-700 text-lg font-semibold">
-<<<<<<< HEAD
-          call
-=======
-          Core
->>>>>>> 01ae528b09dc9ea5701947b5e5d442c0c838d035
+          Call
         </div>
 
         {/* Mobile Menu Button */}
@@ -47,31 +43,27 @@ const Header = () => {
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-white py-4 shadow-md text-center rounded-b-lg">
-          <Link
-            href="/"
-            className="block py-2 text-gray-700 hover:text-blue-500"
-            onClick={() => setIsOpen(false)}
-          >
-            Home
-          </Link>
-          <Link
-            href="/projects"
-            className="block py-2 text-gray-700 hover:text-blue-500"
-            onClick={() => setIsOpen(false)}
-          >
-            Projects
-          </Link>
-          <Link
-            href="/about"
-            className="block py-2 text-gray-700 hover:text-blue-500"
-            onClick={() => setIsOpen(false)}
-          >
-            About Me
-          </Link>
-        </div>
-      )}
+      <div
+        className={`md:hidden bg-white py-4 shadow-md text-center rounded-b-lg transition-all duration-300 ${
+          isOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0 overflow-hidden"
+        }`}
+      >
+        <Link href="/" className="block py-2 text-gray-700 hover:text-blue-500">
+          <button onClick={() => setIsOpen(false)}>Home</button>
+        </Link>
+        <Link
+          href="/projects"
+          className="block py-2 text-gray-700 hover:text-blue-500"
+        >
+          <button onClick={() => setIsOpen(false)}>Projects</button>
+        </Link>
+        <Link
+          href="/about"
+          className="block py-2 text-gray-700 hover:text-blue-500"
+        >
+          <button onClick={() => setIsOpen(false)}>About Me</button>
+        </Link>
+      </div>
     </nav>
   );
 };
