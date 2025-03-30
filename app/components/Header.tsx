@@ -8,7 +8,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed w-full rounded-full bg-white transform -translate-x-1/2 shadow-md z-50">
+    <nav className="fixed w-full rounded-full bg-white -translate-x-1/2 shadow-md z-50">
       <div className="max-w-6xl mx-auto flex justify-between items-center py-3 px-6">
         {/* Logo */}
         <Link href="/" className="text-xl font-bold text-gray-800">
