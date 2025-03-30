@@ -11,7 +11,7 @@ export default function Home() {
       <div className="relative min-h-screen flex items-center justify-center bg-black">
         <div className="absolute inset-0">
           <Image
-            src="/images/pro_img2.jpeg"
+            src="/images/pro_img1.jpg"
             alt="Hero Background"
             layout="fill"
             objectFit="cover"
