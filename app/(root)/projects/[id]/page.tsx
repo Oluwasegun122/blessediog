@@ -44,7 +44,7 @@ const ProjectPage = () => {
     return <p className="text-center text-red-500">Project not found</p>;
 
   return (
-    <div className="pt-20 px-5 max-w-4xl mx-auto">
+    <div className="px-5 max-w-4xl mx-auto">
       <h1 className="text-4xl font-bold text-center mb-6">{project.title}</h1>
 
       <div className="relative w-full h-64 md:h-96 mb-6">

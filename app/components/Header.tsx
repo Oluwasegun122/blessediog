@@ -8,7 +8,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed h-14 top-4 left-1/2 transform -translate-x-1/2 w-[90%] md:w-[80%] bg-white shadow-md rounded-full z-50">
+    <nav className="fixed h-14 top-0 left-1/2 transform -translate-x-1/2 w-[90%] md:w-[80%] bg-white shadow-md rounded-full z-50">
       <div className="flex justify-between items-center px-6 py-3">
         {/* Left Logo */}
         <Link href="/" className="text-2xl font-bold text-gray-800">
