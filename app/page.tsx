@@ -8,17 +8,18 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <div className="relative min-h-screen flex items-center justify-center bg-black">
-        <div className="absolute inset-32">
-          <Image
-            src="/images/pro_img2.jpeg"
-            alt="Hero Background"
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
-            priority
-            className="opacity-80"
-          />
+      <div className="relative w-full h-screen flex items-center justify-center bg-gray-100">
+        <Image
+          src="/images/hero.jpg" // Check this path
+          alt="Hero Background"
+          layout="fill"
+          objectFit="cover"
+          className="absolute inset-0 w-full h-full"
+        />
+        <div className="relative z-10 text-center">
+          <h1 className="text-white text-4xl font-bold">
+            Welcome to My Portfolio
+          </h1>
         </div>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative z-10 text-white text-center px-4 md:px-10">
