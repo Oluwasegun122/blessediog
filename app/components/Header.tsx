@@ -8,55 +8,100 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed h-14 top-3 left-1/2 transform -translate-x-1/2 w-[90%] md:w-[80%] bg-white via-purple-600 to-pink-500 text-black shadow-lg rounded-full z-50">
-      <div className="flex justify-between items-center px-6 py-3">
-        {/* Left Logo */}
-        <Link href="/" className="text-2xl font-bold">
-          BlessedIOG
-        </Link>
+    <nav className="fixed top-0 left-0 right-0 h-16 bg-white shadow-md z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+        <div className="flex justify-between items-center h-full">
+          {/* Left Logo */}
+          <Link
+            href="/"
+            className="text-2xl font-bold text-gray-800 hover:text-purple-600 transition-colors"
+          >
+            BlessedIOG
+          </Link>
 
-        {/* Centered Navigation for Desktop */}
-        <div className="hidden md:flex bg-white bg-opacity-20 px-6 py-2 rounded-full space-x-6">
-          <Link href="/" className="hover:text-gray-300">
-            Home
-          </Link>
-          <Link href="/projects" className="hover:text-gray-300">
-            Projects
-          </Link>
-          <Link href="/about_me" className="hover:text-gray-300">
-            About Me
-          </Link>
+          {/* Centered Navigation for Desktop */}
+          <div className="hidden md:flex items-center space-x-8">
+            <Link
+              href="/"
+              className="text-gray-700 hover:text-purple-600 font-medium transition-colors relative group"
+            >
+              Home
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full"></span>
+            </Link>
+            <Link
+              href="/projects"
+              className="text-gray-700 hover:text-purple-600 font-medium transition-colors relative group"
+            >
+              Projects
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full"></span>
+            </Link>
+            <Link
+              href="/about_me"
+              className="text-gray-700 hover:text-purple-600 font-medium transition-colors relative group"
+            >
+              About Me
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full"></span>
+            </Link>
+          </div>
+
+          {/* Right Edge CTA Button */}
+          <div className="hidden md:block">
+            <Link
+              href="/contact"
+              className="px-5 py-2 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-full font-medium hover:shadow-lg transition-all hover:from-purple-700 hover:to-pink-600"
+            >
+              Contact Me
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-gray-700 focus:outline-none"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? (
+              <FaTimes size={24} className="text-purple-600" />
+            ) : (
+              <FaBars size={24} />
+            )}
+          </button>
         </div>
-
-        {/* Right Edge Text */}
-        <div className="hidden md:block text-lg font-semibold">
-          Call
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden focus:outline-none"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <FaTimes size={28} /> : <FaBars size={28} />}
-        </button>
       </div>
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden bg-white via-purple-600 to-pink-500 text-center rounded-b-lg overflow-hidden transition-transform transform origin-top ${
-          isOpen ? "scale-y-100" : "scale-y-0"
+        className={`md:hidden bg-white shadow-lg absolute top-16 left-0 right-0 overflow-hidden transition-all duration-300 ease-in-out ${
+          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="flex flex-col py-4 space-y-3">
-          <Link href="/" className="hover:text-gray-300">
-            <button onClick={() => setIsOpen(false)}>Home</button>
+        <div className="flex flex-col space-y-4 px-6 py-4">
+          <Link
+            href="/"
+            className="text-gray-700 hover:text-purple-600 font-medium py-2 border-b border-gray-100"
+            onClick={() => setIsOpen(false)}
+          >
+            Home
           </Link>
-          <Link href="/projects" className="hover:text-gray-300">
-            <button onClick={() => setIsOpen(false)}>Projects</button>
+          <Link
+            href="/projects"
+            className="text-gray-700 hover:text-purple-600 font-medium py-2 border-b border-gray-100"
+            onClick={() => setIsOpen(false)}
+          >
+            Projects
           </Link>
-          <Link href="/about_me" className="hover:text-gray-300">
-            <button onClick={() => setIsOpen(false)}>About Me</button>
+          <Link
+            href="/about_me"
+            className="text-gray-700 hover:text-purple-600 font-medium py-2 border-b border-gray-100"
+            onClick={() => setIsOpen(false)}
+          >
+            About Me
+          </Link>
+          <Link
+            href="/contact"
+            className="mt-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-full font-medium text-center"
+            onClick={() => setIsOpen(false)}
+          >
+            Contact Me
           </Link>
         </div>
       </div>

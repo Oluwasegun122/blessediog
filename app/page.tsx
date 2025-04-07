@@ -27,11 +27,11 @@ export default function Home() {
 
         {/* Content */}
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto animate-fadeIn">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white opacity-0 animate-slideUp [animation-fill-mode:forwards]">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white opacity-40 animate-slideUp [animation-fill-mode:forwards]">
             Hello there.
           </h1>
 
-          <p className="text-lg md:text-xl lg:text-2xl mb-8 text-gray-300 leading-relaxed opacity-0 animate-slideUp [animation-fill-mode:forwards] [animation-delay:200ms]">
+          <p className="text-lg md:text-xl lg:text-2xl mb-8 text-gray-300 leading-relaxed opacity-40 animate-slideUp [animation-fill-mode:forwards] [animation-delay:200ms]">
             I use cutting-edge tools and techniques
             <br className="hidden sm:block" />
             to turn complex data sets into actionable
@@ -39,7 +39,7 @@ export default function Home() {
             insights.
           </p>
 
-          <div className="opacity-20 animate-slideUp [animation-fill-mode:forwards] [animation-delay:400ms]">
+          <div className="opacity-40 animate-slideUp [animation-fill-mode:forwards] [animation-delay:400ms]">
             <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-blue-500/20">
               Get Started
             </button>
