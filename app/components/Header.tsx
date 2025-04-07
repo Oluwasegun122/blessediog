@@ -48,7 +48,7 @@ const Header = () => {
           <div className="hidden md:block">
             <Link
               href="/contact"
-              className="px-5 py-2 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-full font-medium hover:shadow-lg transition-all hover:from-purple-700 hover:to-pink-600"
+              className="px-5 py-2 bg-gray-900 text-white rounded-full font-medium hover:shadow-lg transition-all hover:from-purple-700 hover:to-pink-600"
             >
               Contact Me
             </Link>
