@@ -45,6 +45,7 @@ const ProjectPage = () => {
     return <p className="text-center text-red-500">Project not found</p>;
 
   return (
+    <>
     <div className="px-5 max-w-4xl mx-auto">
       <h1 className="text-4xl font-bold text-center mb-6">{project.title}</h1>
 
@@ -61,8 +62,9 @@ const ProjectPage = () => {
       <p className="text-lg text-gray-700 leading-relaxed">
         {project.contents}
       </p>
-      <Footer />
     </div>
+    <Footer />
+    </>
   );
 };
 
