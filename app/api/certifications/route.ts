@@ -6,7 +6,8 @@ const certifications = [
     title: "Full-Stack Development Certification",
     issuer: "Coursera",
     date: "Jan 2023",
-    image: "/images/fullstack-cert.jpg",
+    image:
+      "./images/alx-aice-ai-career-essentials-certificate-faith-obajafa.png",
     credentialId: "FSD-2023-0256",
     description: `This comprehensive certification validates my proficiency in building end-to-end web applications. 
     Covered technologies include:
@@ -26,7 +27,7 @@ const certifications = [
     title: "Data Analysis Certification",
     issuer: "Coursera",
     date: "Mar 2023",
-    image: "/images/data-analysis-cert.jpg",
+    image: "./images/FAITH OBAJAFA CERT.pdf",
     credentialId: "DA-2023-0189",
     description: `This certification demonstrates advanced data analysis capabilities including:
     • Python data analysis with Pandas/NumPy
