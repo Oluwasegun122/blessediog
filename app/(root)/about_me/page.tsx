@@ -33,44 +33,44 @@ const AboutPage = () => {
 
   return (
     <>
-    <div className="px-5">
-      <h1 className="text-3xl md:text-4xl font-bold mb-4">
-        About: {data.name}
-      </h1>
-      <p className="text-lg mb-6">{data.bio}</p>
+      <div className="px-5 mt-16">
+        <h1 className="text-3xl md:text-4xl font-bold mb-4">
+          About: {data.name}
+        </h1>
+        <p className="text-lg mb-6">{data.bio}</p>
 
-      <h2 className="text-2xl font-semibold mb-2">Skills</h2>
-      <ul className="list-disc pl-6 mb-6">
-        {data.skills.map((skill, index) => (
-          <li key={index}>{skill}</li>
-        ))}
-      </ul>
+        <h2 className="text-2xl font-semibold mb-2">Skills</h2>
+        <ul className="list-disc pl-6 mb-6">
+          {data.skills.map((skill, index) => (
+            <li key={index}>{skill}</li>
+          ))}
+        </ul>
 
-      <h2 className="text-2xl font-semibold mb-2">Projects</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-        {data.projects.map((project, index) => (
-          <div key={index} className="border p-4 rounded-lg shadow">
-            <h3 className="text-xl font-bold">{project.title}</h3>
-            <p>{project.description}</p>
-          </div>
-        ))}
+        <h2 className="text-2xl font-semibold mb-2">Projects</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          {data.projects.map((project, index) => (
+            <div key={index} className="border p-4 rounded-lg shadow">
+              <h3 className="text-xl font-bold">{project.title}</h3>
+              <p>{project.description}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 className="text-2xl font-semibold mb-2">Testimonials</h2>
+        <div className="mb-6">
+          {data.testimonials.map((testimonial, index) => (
+            <div key={index} className="border p-4 rounded-lg shadow mb-4">
+              <p className="italic">"{testimonial.feedback}"</p>
+              <p className="font-bold">- {testimonial.name}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 className="text-2xl font-semibold mb-2">Contact</h2>
+        <p>Email: {data.contact.email}</p>
+        <p>Phone: {data.contact.phone}</p>
       </div>
-
-      <h2 className="text-2xl font-semibold mb-2">Testimonials</h2>
-      <div className="mb-6">
-        {data.testimonials.map((testimonial, index) => (
-          <div key={index} className="border p-4 rounded-lg shadow mb-4">
-            <p className="italic">"{testimonial.feedback}"</p>
-            <p className="font-bold">- {testimonial.name}</p>
-          </div>
-        ))}
-      </div>
-
-      <h2 className="text-2xl font-semibold mb-2">Contact</h2>
-      <p>Email: {data.contact.email}</p>
-      <p>Phone: {data.contact.phone}</p>
-    </div>
-    <Footer />
+      <Footer />
     </>
   );
 };
