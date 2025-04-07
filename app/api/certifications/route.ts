@@ -3,47 +3,51 @@ import { NextResponse } from "next/server";
 const certifications = [
   {
     id: 1,
-    title: "Full-Stack Development Certification",
-    issuer: "Coursera",
-    date: "Jan 2023",
-    image:
-      "/certification_img/alx-aice-ai-career-essentials-certificate-faith-obajafa.png",
-    fileType: "image",
-    credentialId: "FSD-2023-0256",
-    description: `This comprehensive certification validates my proficiency in building end-to-end web applications. 
-    Covered technologies include:
-    • React.js with Hooks and Context API
-    • Node.js and Express for backend services
-    • MongoDB and PostgreSQL database management
-    • RESTful API design and implementation
-    • Authentication using JWT and OAuth
-    
-    The program included hands-on projects like:
-    - E-commerce platform with payment integration
-    - Real-time chat application
-    - Portfolio builder with admin dashboard`,
-  },
-  {
-    id: 2,
-    title: "Data Analysis Certification",
-    issuer: "Coursera",
-    date: "Mar 2023",
+    title: "Data Analysis and Visualization Certification",
+    issuer: "StarTech",
+    date: "Jan 2025",
     image: "/images/FAITH OBAJAFA CERT.jpg",
     fileType: "image",
-    credentialId: "DA-2023-0189",
-    description: `This certification demonstrates advanced data analysis capabilities including:
-    • Python data analysis with Pandas/NumPy
-    • Data visualization using Matplotlib and Seaborn
-    • Statistical analysis and hypothesis testing
-    • SQL for complex data queries
-    • Machine learning fundamentals
-    
-    Key projects completed:
-    - Customer segmentation analysis
-    - Sales trend forecasting model
-    - COVID-19 data visualization dashboard
-    - A/B testing statistical analysis`,
+    credentialId: "FSD-2023-0256",
+    description: `
+    This certification signifies the successful completion of a rigorous six-month training in data analysis and visualization. The program encompassed core modules including data storage and management using MySQL, statistical analysis with SPSS, Power BI dashboard development, and data cleaning, manipulation, and transformation using Microsoft Excel.
+    Core Competencies:
+    SQL, SPSS, Power BI, Microsoft Excel, Data Visualization, Data Management
+    Professional Relevance: This certification has strengthened my analytical 
+    capabilities and equipped me with practical tools for translating complex 
+    datasets into actionable insights—skills that are critical for data-driven 
+    decision-making across industries.`,
   },
+
+  {
+    id: 2,
+    title: "Artificial Intelligence Career Essentials Certification",
+    issuer: "ALX Africa",
+    date: "July 2024",
+    image:
+      "/images/alx-aice-ai-career-essentials-certificate-faith-obajafa.png",
+    fileType: "image",
+    credentialId: "DA-2023-0189",
+    description: `
+      Validates expertise in artificial intelligence and its application in the modern workforce, covering:
+
+        - Machine learning principles
+        - AI ethics
+        - Digital readiness
+        - AI-powered tools and strategies
+
+      Demonstrated through:
+        - Foundational knowledge of AI fundamentals
+        - Understanding of machine learning concepts
+        - Application of ethical AI practices
+        - Engagement with AI-powered tools and strategies
+      
+      Professional Relevance:
+        This certification demonstrates my commitment to continuous learning and technological 
+        adaptability, preparing me to engage with AI-powered tools and strategies that are 
+        increasingly shaping the future of work..`,
+  },
+
   {
     id: 3,
     title: "Cloud Architecture Professional",
@@ -66,67 +70,89 @@ const certifications = [
     - Cost optimization strategies`,
   },
   {
-    id: 3,
-    title: "Cloud Architecture Professional",
-    issuer: "AWS",
-    date: "May 2023",
+    id: 4,
+    title: "Human Resource Management Certification",
+    issuer: "LA PLAGE META VERSE",
+    date: "April 2025",
     image: "/images/Faith Obajafa certificate_3.jpg",
     fileType: "image",
-    credentialId: "AWS-CAP-2023-7421",
-    description: `Validates expertise in designing distributed systems on AWS, covering:
-    • Infrastructure as Code (Terraform)
-    • Serverless architecture patterns
-    • CI/CD pipeline implementation
-    • Containerization with ECS/EKS
-    • Security best practices
-    
-    Demonstrated through:
-    - Migration of monolithic app to microservices
-    - Auto-scaling load-balanced architecture
-    - Disaster recovery solution design
-    - Cost optimization strategies`,
+    credentialId: "1969017",
+    description: `
+      Description:
+      Validates expertise in human resource functions and strategic people management, covering:
+
+        - Recruitment and selection
+        - Performance management
+        - Employee engagement
+        - Organizational behavior
+        - Conflict resolution
+
+      Demonstrated through:
+        - Talent acquisition and management
+        - Performance management and optimization
+        - Organizational development and growth
+        - Employee relations and engagement strategies
+
+      Professional Relevance:
+        This certification demonstrates my ability to align human capital strategies 
+        with organizational goals, promoting sustainable growth and employee 
+        satisfaction. I am equipped to foster effective workplace environments 
+        and drive organizational success through strategic people management.`,
   },
   {
     id: 3,
-    title: "Cloud Architecture Professional",
-    issuer: "AWS",
+    title: "Master Emotional Intelligence",
+    issuer: "Grovo",
     date: "May 2023",
     image: "/images/Faith Obajafa certificate_4.jpg",
     fileType: "image",
     credentialId: "AWS-CAP-2023-7421",
-    description: `Validates expertise in designing distributed systems on AWS, covering:
-    • Infrastructure as Code (Terraform)
-    • Serverless architecture patterns
-    • CI/CD pipeline implementation
-    • Containerization with ECS/EKS
-    • Security best practices
-    
-    Demonstrated through:
-    - Migration of monolithic app to microservices
-    - Auto-scaling load-balanced architecture
-    - Disaster recovery solution design
-    - Cost optimization strategies`,
+    description: `
+    Core Competencies:
+        - Self-awareness
+        - Self-regulation
+        - Social awareness
+        - Relationship management
+
+Professional Relevance:
+    This certification demonstrates my commitment to developing emotional 
+    intelligence, a crucial skill for effective leadership, teamwork, and 
+    overall success. By understanding and managing my own emotions, as well 
+    as recognizing and influencing the emotions of others, I am equipped to 
+    navigate complex social dynamics and drive personal and professional 
+    growth. This certification showcases my dedication to self-improvement 
+    and my ability to build strong relationships, making me a valuable asset 
+    to any organization.`,
   },
   {
-    id: 3,
-    title: "Cloud Architecture Professional",
-    issuer: "AWS",
-    date: "May 2023",
+    id: 6,
+    title: "Basic Financial Education Certification",
+    issuer: "Kudimata",
+    date: "December 13, 2024",
     image: "/images/Faith Obajafa certificate_5.jpg",
     fileType: "image",
-    credentialId: "AWS-CAP-2023-7421",
-    description: `Validates expertise in designing distributed systems on AWS, covering:
-    • Infrastructure as Code (Terraform)
-    • Serverless architecture patterns
-    • CI/CD pipeline implementation
-    • Containerization with ECS/EKS
-    • Security best practices
-    
-    Demonstrated through:
-    - Migration of monolithic app to microservices
-    - Auto-scaling load-balanced architecture
-    - Disaster recovery solution design
-    - Cost optimization strategies`,
+    credentialId: "A0813B564B",
+    description: `
+      Validates expertise in financial literacy, personal finance management, and financial 
+
+      planning, covering:
+        • Financial literacy
+        • Personal finance management
+        • Financial planning
+
+      Demonstrated through:
+        • Effective financial decision-making
+        • Long-term financial stability strategies
+        • Informed financial planning
+
+      Date Earned: December 13, 2024
+      Credential ID: A0813B564B
+      Sponsored by: NNPC Foundation
+
+      Endorsed by:
+        • Kathleen Erhimu, Founder/GMD of Kudimata
+        • Brig Gen YD Ahmed, Director General of NYSC
+        • Emmanuella N. Arukwe, MD/CEO of NNPC Foundation`,
   },
 ];
 export async function GET() {

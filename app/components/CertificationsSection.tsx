@@ -209,7 +209,7 @@ export default function CertificationsSection() {
             <div className="p-4 border-t flex justify-end">
               <button
                 onClick={() => setSelectedCert(null)}
-                className="px-6 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+                className="px-6 py-2 bg-gray-100 hover:bg-gray-200 hidden rounded-lg transition-colors"
               >
                 Close
               </button>
