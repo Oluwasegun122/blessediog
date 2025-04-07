@@ -45,7 +45,7 @@ export default function Home() {
               href="/about_me"
               className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-blue-500/20"
             >
-              Get Started
+              About Me
             </Link>
           </div>
         </div>

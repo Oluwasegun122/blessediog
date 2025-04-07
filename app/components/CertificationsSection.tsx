@@ -58,13 +58,12 @@ export default function CertificationsSection() {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-            <span className="block">My Certifications</span>
-            <span className="block mt-2 h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></span>
+        <div className="my-10 flex flex-col items-center">
+          <h2 className="text-4xl font-extrabold tracking-wider uppercase text-gray-800 relative inline-block">
+            Certifications
+            <span className="absolute left-1/2 transform -translate-x-1/2 -bottom-2 h-1 w-16 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full"></span>
           </h2>
         </div>
-
         <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {certs.map((cert) => (
             <div
