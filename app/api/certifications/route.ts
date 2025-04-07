@@ -28,8 +28,8 @@ const certifications = [
     title: "Data Analysis Certification",
     issuer: "Coursera",
     date: "Mar 2023",
-    image: "/images/FAITH OBAJAFA CERT.pdf",
-    fileType: "pdf",
+    image: "/images/FAITH OBAJAFA CERT.jpg",
+    fileType: "image",
     credentialId: "DA-2023-0189",
     description: `This certification demonstrates advanced data analysis capabilities including:
     • Python data analysis with Pandas/NumPy
@@ -49,7 +49,70 @@ const certifications = [
     title: "Cloud Architecture Professional",
     issuer: "AWS",
     date: "May 2023",
-    image: "/images/cloud-cert.jpg",
+    image: "/images/Faith Obajafa certificate_2.jpg",
+    fileType: "image",
+    credentialId: "AWS-CAP-2023-7421",
+    description: `Validates expertise in designing distributed systems on AWS, covering:
+    • Infrastructure as Code (Terraform)
+    • Serverless architecture patterns
+    • CI/CD pipeline implementation
+    • Containerization with ECS/EKS
+    • Security best practices
+    
+    Demonstrated through:
+    - Migration of monolithic app to microservices
+    - Auto-scaling load-balanced architecture
+    - Disaster recovery solution design
+    - Cost optimization strategies`,
+  },
+  {
+    id: 3,
+    title: "Cloud Architecture Professional",
+    issuer: "AWS",
+    date: "May 2023",
+    image: "/images/Faith Obajafa certificate_3.jpg",
+    fileType: "image",
+    credentialId: "AWS-CAP-2023-7421",
+    description: `Validates expertise in designing distributed systems on AWS, covering:
+    • Infrastructure as Code (Terraform)
+    • Serverless architecture patterns
+    • CI/CD pipeline implementation
+    • Containerization with ECS/EKS
+    • Security best practices
+    
+    Demonstrated through:
+    - Migration of monolithic app to microservices
+    - Auto-scaling load-balanced architecture
+    - Disaster recovery solution design
+    - Cost optimization strategies`,
+  },
+  {
+    id: 3,
+    title: "Cloud Architecture Professional",
+    issuer: "AWS",
+    date: "May 2023",
+    image: "/images/Faith Obajafa certificate_4.jpg",
+    fileType: "image",
+    credentialId: "AWS-CAP-2023-7421",
+    description: `Validates expertise in designing distributed systems on AWS, covering:
+    • Infrastructure as Code (Terraform)
+    • Serverless architecture patterns
+    • CI/CD pipeline implementation
+    • Containerization with ECS/EKS
+    • Security best practices
+    
+    Demonstrated through:
+    - Migration of monolithic app to microservices
+    - Auto-scaling load-balanced architecture
+    - Disaster recovery solution design
+    - Cost optimization strategies`,
+  },
+  {
+    id: 3,
+    title: "Cloud Architecture Professional",
+    issuer: "AWS",
+    date: "May 2023",
+    image: "/images/Faith Obajafa certificate_5.jpg",
     fileType: "image",
     credentialId: "AWS-CAP-2023-7421",
     description: `Validates expertise in designing distributed systems on AWS, covering:

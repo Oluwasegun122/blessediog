@@ -154,9 +154,13 @@ export default function CertificationsSection() {
             </div>
 
             <div className="flex-1 overflow-auto">
-              <PDFViewer
-                fileUrl={selectedCert.image}
-                type={selectedCert.fileType}
+              <Image
+                src={selectedCert.image}
+                alt="Certificate"
+                width={800}
+                height={600}
+                className="object-contain max-h-full"
+                quality={100}
               />
             </div>
 
