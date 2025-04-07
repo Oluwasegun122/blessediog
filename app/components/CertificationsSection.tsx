@@ -130,18 +130,18 @@ export default function CertificationsSection() {
           </Link>
         </div>
       </div>
-      {/* Certificate Modal Viewer */}
+      {/* Expanded Certificate Modal */}
       {selectedCert && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
           onClick={() => setSelectedCert(null)}
         >
           <div
-            className="bg-white rounded-lg w-full max-w-6xl h-[90vh] overflow-hidden shadow-2xl flex flex-col"
+            className="bg-white rounded-lg w-full max-w-4xl h-[90vh] overflow-hidden shadow-2xl flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-center p-6 border-b">
-              <h3 className="text-2xl font-bold text-gray-800">
+              <h3 className="text-3xl font-bold text-gray-800">
                 {selectedCert.title}
               </h3>
               <button
@@ -152,36 +152,71 @@ export default function CertificationsSection() {
               </button>
             </div>
 
-            <div className="flex-1 overflow-auto">
-              <CertificateViewer
-                fileUrl={selectedCert.image}
-                fileType={selectedCert.fileType}
-              />
-            </div>
-
-            <div className="p-6 border-t">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="text-lg font-semibold mb-2">Details</h4>
-                  <p className="text-gray-600">{selectedCert.issuer}</p>
-                  <p className="text-gray-600 mt-1">{selectedCert.date}</p>
-                  {selectedCert.credentialId && (
-                    <p className="text-gray-600 mt-1">
-                      ID: {selectedCert.credentialId}
-                    </p>
-                  )}
+            <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-8 p-6 overflow-auto">
+              {/* Large Certificate Image - Now Clickable */}
+              <div
+                className="relative w-full h-full min-h-[400px] cursor-zoom-in"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open(selectedCert.image, "_blank");
+                }}
+              >
+                <Image
+                  src={selectedCert.image}
+                  alt={selectedCert.title}
+                  fill
+                  className="object-contain hover:opacity-90 transition-opacity"
+                  quality={100}
+                />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                  <div className="bg-black bg-opacity-50 text-white px-4 py-2 rounded-lg">
+                    Click to view full size
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-lg font-semibold mb-2">Description</h4>
+              </div>
+
+              {/* Detailed Information */}
+              <div className="space-y-6">
+                <div className="space-y-2">
+                  <h4 className="text-xl font-semibold">Issuer</h4>
+                  <p className="text-gray-600">{selectedCert.issuer}</p>
+                </div>
+
+                <div className="space-y-2">
+                  <h4 className="text-xl font-semibold">Description</h4>
                   <p className="text-gray-700 whitespace-pre-line">
                     {selectedCert.description}
                   </p>
                 </div>
+
+                <div className="grid grid-cols-2 gap-4 pt-4">
+                  <div>
+                    <h4 className="text-lg font-medium">Date Earned</h4>
+                    <p className="text-gray-600">{selectedCert.date}</p>
+                  </div>
+                  {selectedCert.credentialId && (
+                    <div>
+                      <h4 className="text-lg font-medium">Credential ID</h4>
+                      <p className="text-gray-600">
+                        {selectedCert.credentialId}
+                      </p>
+                    </div>
+                  )}
+                </div>
               </div>
+            </div>
+
+            <div className="p-4 border-t flex justify-end">
+              <button
+                onClick={() => setSelectedCert(null)}
+                className="px-6 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+              >
+                Close
+              </button>
             </div>
           </div>
         </div>
-      )}{" "}
+      )}
     </section>
   );
 }
