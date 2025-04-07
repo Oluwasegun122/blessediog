@@ -53,7 +53,7 @@ const certifications = [
     title: "Cloud Architecture Professional",
     issuer: "AWS",
     date: "May 2023",
-    image: "/images/Faith Obajafa certificate_2.jpg",
+    image: "/images/Faith Obajafa certificate_3.jpg",
     fileType: "image",
     credentialId: "AWS-CAP-2023-7421",
     description: `Validates expertise in designing distributed systems on AWS, covering:
@@ -74,7 +74,7 @@ const certifications = [
     title: "Human Resource Management Certification",
     issuer: "LA PLAGE META VERSE",
     date: "April 2025",
-    image: "/images/Faith Obajafa certificate_3.jpg",
+    image: "/images/Faith Obajafa certificate_2.jpg",
     fileType: "image",
     credentialId: "1969017",
     description: `
@@ -108,51 +108,52 @@ const certifications = [
     fileType: "image",
     credentialId: "AWS-CAP-2023-7421",
     description: `
-    Core Competencies:
+      Core Competencies:
+          - Self-awareness
+          - Self-regulation
+          - Social awareness
+          - Relationship management
+
+      Professional Relevance:
+          This certification demonstrates my commitment to developing emotional 
+          intelligence, a crucial skill for effective leadership, teamwork, and 
+          overall success. By understanding and managing my own emotions, as well 
+          as recognizing and influencing the emotions of others, I am equipped to 
+          navigate complex social dynamics and drive personal and professional 
+          growth. This certification showcases my dedication to self-improvement 
+          and my ability to build strong relationships, making me a valuable asset 
+          to any organization.`,
+  },
+  {
+    id: 6,
+    title: "Emotional Intelligence Certification",
+    issuer: "Grovo",
+    date: "January 6, 2025",
+    image: "/images/Faith Obajafa certificate_1.jpg",
+    fileType: "image",
+    credentialId: "Not Provided (17-minute course completion)",
+    description: `
+      Validates expertise in emotional intelligence, covering:
+
         - Self-awareness
         - Self-regulation
         - Social awareness
         - Relationship management
 
-Professional Relevance:
-    This certification demonstrates my commitment to developing emotional 
-    intelligence, a crucial skill for effective leadership, teamwork, and 
-    overall success. By understanding and managing my own emotions, as well 
-    as recognizing and influencing the emotions of others, I am equipped to 
-    navigate complex social dynamics and drive personal and professional 
-    growth. This certification showcases my dedication to self-improvement 
-    and my ability to build strong relationships, making me a valuable asset 
-    to any organization.`,
-  },
-  {
-    id: 6,
-    title: "Basic Financial Education Certification",
-    issuer: "Kudimata",
-    date: "December 13, 2024",
-    image: "/images/Faith Obajafa certificate_5.jpg",
-    fileType: "image",
-    credentialId: "A0813B564B",
-    description: `
-      Validates expertise in financial literacy, personal finance management, and financial 
-
-      planning, covering:
-        • Financial literacy
-        • Personal finance management
-        • Financial planning
-
       Demonstrated through:
-        • Effective financial decision-making
-        • Long-term financial stability strategies
-        • Informed financial planning
 
-      Date Earned: December 13, 2024
-      Credential ID: A0813B564B
-      Sponsored by: NNPC Foundation
+        - Effective emotional management
+        - Complex social dynamics navigation
+        - Strong relationship building
+        - Personal and professional growth strategies
 
-      Endorsed by:
-        • Kathleen Erhimu, Founder/GMD of Kudimata
-        • Brig Gen YD Ahmed, Director General of NYSC
-        • Emmanuella N. Arukwe, MD/CEO of NNPC Foundation`,
+      Professional Relevance:
+        This certification demonstrates my commitment to developing emotional 
+        intelligence, a crucial skill for effective leadership, teamwork, and 
+        overall success. By understanding and managing my own emotions, as well 
+        as recognizing and influencing the emotions of others, I am equipped to 
+        drive personal and professional growth and make a valuable contribution 
+        to any organization.`,
   },
 ];
 export async function GET() {
