@@ -21,7 +21,7 @@ interface Project {
 }
 
 export default function ProjectPage() {
-  const { id } = useParams();
+  const { id } = useParams<{ id: string }>();
   const router = useRouter();
   const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
@@ -39,10 +39,9 @@ export default function ProjectPage() {
       const res = await fetch(`/api/projects/${id}`);
 
       if (!res.ok) {
+        const errorData = await res.json();
         throw new Error(
-          res.status === 404
-            ? "Project not found"
-            : `Failed to fetch project (status: ${res.status})`
+          errorData.error || `Failed to fetch project (status: ${res.status})`
         );
       }
 
@@ -59,11 +58,21 @@ export default function ProjectPage() {
   };
 
   useEffect(() => {
-    fetchProject();
+    if (id) {
+      fetchProject();
+    }
   }, [id]);
 
   if (error) {
-    return <ErrorBoundary error={error} reset={fetchProject} />;
+    return (
+      <ErrorBoundary
+        error={error}
+        reset={() => {
+          setError(null);
+          fetchProject();
+        }}
+      />
+    );
   }
 
   if (loading) return <Loading />;
@@ -97,7 +106,6 @@ export default function ProjectPage() {
             </h1>
             {project.date && (
               <p className="text-lg text-gray-500 mb-6">
-                Completed:{" "}
                 {new Date(project.date).toLocaleDateString("en-US", {
                   year: "numeric",
                   month: "long",
@@ -108,7 +116,7 @@ export default function ProjectPage() {
             <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
           </div>
 
-          {/* Project Image with error handling */}
+          {/* Project Image */}
           <div className="relative w-full h-64 md:h-[500px] rounded-xl overflow-hidden shadow-xl mb-12">
             <Image
               src={project.image}
@@ -129,7 +137,7 @@ export default function ProjectPage() {
           {/* Project Content */}
           <div className="max-w-3xl mx-auto">
             {/* Project Tags */}
-            {project.tags && (
+            {project.tags?.length > 0 && (
               <div className="flex flex-wrap gap-2 mb-8">
                 {project.tags.map((tag) => (
                   <span
