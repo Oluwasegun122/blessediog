@@ -93,7 +93,7 @@ const certifications = [
         - Organizational development and growth
         - Employee relations and engagement strategies
 
-      Professional Relevance:
+      **Professional Relevance:**
         This certification demonstrates my ability to align human capital strategies 
         with organizational goals, promoting sustainable growth and employee 
         satisfaction. I am equipped to foster effective workplace environments 
