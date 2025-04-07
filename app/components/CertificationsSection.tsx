@@ -61,29 +61,32 @@ export default function CertificationsSection() {
           {certs.map((cert) => (
             <div
               key={cert.id}
-              className="relative h-80 w-full cursor-pointer"
+              className="relative h-96 w-full cursor-pointer group"
               onClick={() => setSelectedCert(cert)}
             >
-              {/* Envelope Design */}
-              <div className="absolute inset-0 bg-white border-2 border-blue-100 rounded-lg shadow-md overflow-hidden">
+              {/* Envelope Card */}
+              <div className="absolute inset-0 bg-white border-2 border-blue-100 rounded-lg shadow-md overflow-hidden transition-transform duration-300 group-hover:scale-105">
                 {/* Envelope Flap */}
-                <div className="absolute top-0 left-0 right-0 h-10 bg-gradient-to-r from-blue-50 to-purple-50 transform origin-top -rotate-2 scale-x-105"></div>
+                <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-r from-blue-50 to-purple-50 transform origin-top -rotate-3 scale-x-105"></div>
 
-                {/* Envelope Body */}
-                <div className="absolute inset-0 pt-12 pb-6 px-6 flex flex-col">
+                {/* Certificate Preview (Larger Image) */}
+                <div className="absolute inset-0 pt-16 pb-6 px-6 flex flex-col">
                   <div className="flex-1 flex flex-col items-center justify-center">
-                    <div className="relative w-20 h-20 mb-4">
+                    <div className="relative w-40 h-40 mb-6">
                       <Image
                         src={cert.image}
                         alt={cert.title}
                         fill
                         className="object-contain"
+                        quality={100}
                       />
                     </div>
                     <h3 className="text-xl font-bold text-center text-gray-800">
                       {cert.title}
                     </h3>
-                    <p className="text-gray-500 mt-2 text-sm">Click to view</p>
+                    <p className="text-gray-500 mt-2 text-sm">
+                      Click to view full certificate
+                    </p>
                   </div>
                   <div className="flex justify-between text-sm text-gray-400">
                     <span>{cert.issuer}</span>
@@ -105,52 +108,76 @@ export default function CertificationsSection() {
         </div>
       </div>
 
-      {/* Modal for Certificate Details */}
+      {/* Expanded Certificate Modal */}
       {selectedCert && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
           onClick={() => setSelectedCert(null)}
         >
           <div
-            className="bg-white rounded-lg max-w-md w-full p-6 shadow-xl"
+            className="bg-white rounded-lg w-full max-w-4xl h-[90vh] overflow-hidden shadow-2xl flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex justify-between items-start">
-              <h3 className="text-2xl font-bold text-gray-800">
+            <div className="flex justify-between items-center p-6 border-b">
+              <h3 className="text-3xl font-bold text-gray-800">
                 {selectedCert.title}
               </h3>
               <button
                 onClick={() => setSelectedCert(null)}
-                className="text-gray-500 hover:text-gray-700"
+                className="text-gray-500 hover:text-gray-700 text-2xl"
               >
                 ✕
               </button>
             </div>
 
-            <p className="text-gray-600 mt-2">
-              Issued by {selectedCert.issuer}
-            </p>
-
-            <div className="my-4 p-4 bg-gray-50 rounded">
-              <p className="text-gray-700">{selectedCert.description}</p>
-            </div>
-
-            <div className="mt-6 flex justify-center">
-              <div className="relative w-32 h-32">
+            <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-8 p-6 overflow-auto">
+              {/* Large Certificate Image */}
+              <div className="relative w-full h-full min-h-[400px]">
                 <Image
                   src={selectedCert.image}
                   alt={selectedCert.title}
                   fill
                   className="object-contain"
+                  quality={100}
                 />
+              </div>
+
+              {/* Detailed Information */}
+              <div className="space-y-6">
+                <div className="space-y-2">
+                  <h4 className="text-xl font-semibold">Issuer</h4>
+                  <p className="text-gray-600">{selectedCert.issuer}</p>
+                </div>
+
+                <div className="space-y-2">
+                  <h4 className="text-xl font-semibold">Description</h4>
+                  <p className="text-gray-700">{selectedCert.description}</p>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4 pt-4">
+                  <div>
+                    <h4 className="text-lg font-medium">Date Earned</h4>
+                    <p className="text-gray-600">{selectedCert.date}</p>
+                  </div>
+                  {selectedCert.credentialId && (
+                    <div>
+                      <h4 className="text-lg font-medium">Credential ID</h4>
+                      <p className="text-gray-600">
+                        {selectedCert.credentialId}
+                      </p>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
 
-            <div className="mt-6 text-sm text-gray-500 space-y-1">
-              <p>Issued: {selectedCert.date}</p>
-              {selectedCert.credentialId && (
-                <p>Credential ID: {selectedCert.credentialId}</p>
-              )}
+            <div className="p-4 border-t flex justify-end">
+              <button
+                onClick={() => setSelectedCert(null)}
+                className="px-6 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+              >
+                Close
+              </button>
             </div>
           </div>
         </div>
