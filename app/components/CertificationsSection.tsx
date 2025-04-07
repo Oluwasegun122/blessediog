@@ -145,7 +145,7 @@ export default function CertificationsSection() {
               </h3>
               <button
                 onClick={() => setSelectedCert(null)}
-                className="text-gray-500 hover:text-gray-700 text-2xl hidden"
+                className="text-gray-500 hover:text-gray-700 text-2xl"
               >
                 ✕
               </button>
