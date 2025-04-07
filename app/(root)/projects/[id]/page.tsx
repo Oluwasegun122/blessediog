@@ -8,7 +8,7 @@ import Footer from "@/app/components/Footer";
 import ErrorBoundary from "@/app/components/ErrorBoundary";
 
 interface Project {
-  id: string;
+  id: number;
   title: string;
   image: string;
   description: string;
