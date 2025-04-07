@@ -3,6 +3,7 @@ import AboutMe from "./components/AboutMe";
 import ProjectsSection from "./components/ProjectsSection";
 import CertificationsSection from "./components/CertificationsSection";
 import Footer from "./components/Footer";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -31,7 +32,7 @@ export default function Home() {
             Hello there.
           </h1>
 
-          <p className="text-lg md:text-xl lg:text-2xl mb-8 text-gray-300 leading-relaxed opacity-40 animate-slideUp [animation-fill-mode:forwards] [animation-delay:200ms]">
+          <p className="text-lg md:text-xl lg:text-2xl mb-8 text-gray-300 leading-relaxed opacity-80 animate-slideUp [animation-fill-mode:forwards] [animation-delay:200ms]">
             I use cutting-edge tools and techniques
             <br className="hidden sm:block" />
             to turn complex data sets into actionable
@@ -39,10 +40,13 @@ export default function Home() {
             insights.
           </p>
 
-          <div className="opacity-40 animate-slideUp [animation-fill-mode:forwards] [animation-delay:400ms]">
-            <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-blue-500/20">
+          <div className="opacity-80 animate-slideUp [animation-fill-mode:forwards] [animation-delay:400ms]">
+            <Link
+              href="/about_me"
+              className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-blue-500/20"
+            >
               Get Started
-            </button>
+            </Link>
           </div>
         </div>
       </div>
