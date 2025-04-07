@@ -3,56 +3,18 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Worker, Viewer } from "@react-pdf-viewer/core";
-import "@react-pdf-viewer/core/lib/styles/index.css";
-import "@react-pdf-viewer/default-layout/lib/styles/index.css";
-import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
+import CertificateViewer from "./CertificateViewer";
 
 interface Certification {
   id: number;
   title: string;
   issuer: string;
   date: string;
-  fileUrl: string; // Can be PDF or image URL
+  image: string;
   description: string;
   credentialId?: string;
-  fileType: "pdf" | "image"; // New field to distinguish file types
+  fileType: "pdf" | "image"; // Changed from optional to required
 }
-
-const CertificateViewer = ({
-  fileUrl,
-  fileType,
-}: {
-  fileUrl: string;
-  fileType: "pdf" | "image";
-}) => {
-  const defaultLayoutPluginInstance = defaultLayoutPlugin();
-
-  if (fileType === "pdf") {
-    return (
-      <div className="h-[750px] w-full">
-        <Worker
-          workerUrl={`https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js`}
-        >
-          <Viewer fileUrl={fileUrl} plugins={[defaultLayoutPluginInstance]} />
-        </Worker>
-      </div>
-    );
-  }
-
-  return (
-    <div className="flex justify-center items-center h-full">
-      <Image
-        src={fileUrl}
-        alt="Certificate"
-        width={800}
-        height={600}
-        className="object-contain max-h-[750px]"
-        quality={100}
-      />
-    </div>
-  );
-};
 
 export default function CertificationsSection() {
   const [certs, setCerts] = useState<Certification[]>([]);
@@ -63,7 +25,13 @@ export default function CertificationsSection() {
     fetch("/api/certifications")
       .then((res) => res.json())
       .then((data: Certification[]) => {
-        setCerts(data.slice(0, 3));
+        const enhancedData = data.map((cert) => ({
+          ...cert,
+          // Auto-detect fileType if not provided by API
+          fileType:
+            cert.fileType || (cert.image.endsWith(".pdf") ? "pdf" : "image"),
+        }));
+        setCerts(enhancedData.slice(0, 3));
       })
       .catch((err) => console.error("Error fetching certifications:", err))
       .finally(() => setLoading(false));
@@ -101,52 +69,52 @@ export default function CertificationsSection() {
           {certs.map((cert) => (
             <div
               key={cert.id}
-              className="relative h-96 w-full cursor-pointer group"
+              className="relative h-80 w-full rounded-xl overflow-hidden shadow-lg group cursor-pointer"
               onClick={() => setSelectedCert(cert)}
             >
-              <div className="absolute inset-0 bg-white border-2 border-blue-100 rounded-lg shadow-md overflow-hidden transition-transform duration-300 group-hover:scale-105">
-                <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-r from-blue-50 to-purple-50 transform origin-top -rotate-3 scale-x-105"></div>
-
-                <div className="absolute inset-0 pt-16 pb-6 px-6 flex flex-col">
-                  <div className="flex-1 flex flex-col items-center justify-center">
-                    <div className="relative w-40 h-40 mb-6">
-                      {cert.fileType === "pdf" ? (
-                        <div className="flex items-center justify-center w-full h-full bg-gray-100 rounded-lg">
-                          <svg
-                            className="w-20 h-20 text-blue-500"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
-                            ></path>
-                          </svg>
-                        </div>
-                      ) : (
-                        <Image
-                          src={cert.fileUrl}
-                          alt={cert.title}
-                          fill
-                          className="object-contain"
-                          quality={100}
-                        />
-                      )}
+              {/* Certificate Background Image */}
+              <div className="absolute inset-0">
+                {cert.fileType === "pdf" ? (
+                  <div className="w-full h-full bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
+                    <div className="text-center p-6">
+                      <svg
+                        className="w-16 h-16 mx-auto text-blue-500 mb-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                        ></path>
+                      </svg>
+                      <span className="text-lg font-medium text-gray-700">
+                        PDF Certificate
+                      </span>
                     </div>
-                    <h3 className="text-xl font-bold text-center text-gray-800">
-                      {cert.title}
-                    </h3>
-                    <p className="text-gray-500 mt-2 text-sm">
-                      Click to view certificate
-                    </p>
                   </div>
-                  <div className="flex justify-between text-sm text-gray-400">
-                    <span>{cert.issuer}</span>
-                    <span>{cert.date}</span>
-                  </div>
+                ) : (
+                  <Image
+                    src={cert.image}
+                    alt={cert.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    quality={80}
+                  />
+                )}
+              </div>
+
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+
+              {/* Content */}
+              <div className="relative h-full flex flex-col justify-end p-6 text-white">
+                <h3 className="text-xl font-bold mb-1">{cert.title}</h3>
+                <div className="flex justify-between text-sm">
+                  <span>{cert.issuer}</span>
+                  <span>{cert.date}</span>
                 </div>
               </div>
             </div>
@@ -163,10 +131,10 @@ export default function CertificationsSection() {
         </div>
       </div>
 
-      {/* Unified Viewer Modal */}
+      {/* Certificate Modal Viewer */}
       {selectedCert && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4"
           onClick={() => setSelectedCert(null)}
         >
           <div
@@ -174,12 +142,12 @@ export default function CertificationsSection() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-center p-6 border-b">
-              <h3 className="text-3xl font-bold text-gray-800">
+              <h3 className="text-2xl font-bold text-gray-800">
                 {selectedCert.title}
               </h3>
               <button
                 onClick={() => setSelectedCert(null)}
-                className="text-gray-500 hover:text-gray-700 text-2xl"
+                className="text-gray-500 hover:text-gray-700 text-2xl hidden"
               >
                 ✕
               </button>
@@ -187,38 +155,28 @@ export default function CertificationsSection() {
 
             <div className="flex-1 overflow-auto">
               <CertificateViewer
-                fileUrl={selectedCert.fileUrl}
+                fileUrl={selectedCert.image}
                 fileType={selectedCert.fileType}
               />
             </div>
 
             <div className="p-6 border-t">
-              <div className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <h4 className="text-lg font-semibold">Issuer</h4>
+                  <h4 className="text-lg font-semibold mb-2">Details</h4>
                   <p className="text-gray-600">{selectedCert.issuer}</p>
+                  <p className="text-gray-600 mt-1">{selectedCert.date}</p>
+                  {selectedCert.credentialId && (
+                    <p className="text-gray-600 mt-1">
+                      ID: {selectedCert.credentialId}
+                    </p>
+                  )}
                 </div>
-
                 <div>
-                  <h4 className="text-lg font-semibold">Description</h4>
+                  <h4 className="text-lg font-semibold mb-2">Description</h4>
                   <p className="text-gray-700 whitespace-pre-line">
                     {selectedCert.description}
                   </p>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <h4 className="text-lg font-semibold">Date Earned</h4>
-                    <p className="text-gray-600">{selectedCert.date}</p>
-                  </div>
-                  {selectedCert.credentialId && (
-                    <div>
-                      <h4 className="text-lg font-semibold">Credential ID</h4>
-                      <p className="text-gray-600">
-                        {selectedCert.credentialId}
-                      </p>
-                    </div>
-                  )}
                 </div>
               </div>
             </div>

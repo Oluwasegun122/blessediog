@@ -8,6 +8,7 @@ const certifications = [
     date: "Jan 2023",
     image:
       "/images/alx-aice-ai-career-essentials-certificate-faith-obajafa.png",
+    fileType: "image",
     credentialId: "FSD-2023-0256",
     description: `This comprehensive certification validates my proficiency in building end-to-end web applications. 
     Covered technologies include:
@@ -28,6 +29,7 @@ const certifications = [
     issuer: "Coursera",
     date: "Mar 2023",
     image: "/images/FAITH OBAJAFA CERT.pdf",
+    fileType: "pdf",
     credentialId: "DA-2023-0189",
     description: `This certification demonstrates advanced data analysis capabilities including:
     • Python data analysis with Pandas/NumPy
@@ -48,6 +50,7 @@ const certifications = [
     issuer: "AWS",
     date: "May 2023",
     image: "/images/cloud-cert.jpg",
+    fileType: "image",
     credentialId: "AWS-CAP-2023-7421",
     description: `Validates expertise in designing distributed systems on AWS, covering:
     • Infrastructure as Code (Terraform)
