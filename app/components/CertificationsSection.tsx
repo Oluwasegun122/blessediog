@@ -3,17 +3,56 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import CertificateViewer from "./CertificateViewer";
+import { Worker, Viewer } from "@react-pdf-viewer/core";
+import "@react-pdf-viewer/core/lib/styles/index.css";
+import "@react-pdf-viewer/default-layout/lib/styles/index.css";
+import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
 
 interface Certification {
   id: number;
   title: string;
   issuer: string;
   date: string;
-  image: string;
+  fileUrl: string; // Can be PDF or image URL
   description: string;
   credentialId?: string;
+  fileType: "pdf" | "image"; // New field to distinguish file types
 }
+
+const CertificateViewer = ({
+  fileUrl,
+  fileType,
+}: {
+  fileUrl: string;
+  fileType: "pdf" | "image";
+}) => {
+  const defaultLayoutPluginInstance = defaultLayoutPlugin();
+
+  if (fileType === "pdf") {
+    return (
+      <div className="h-[750px] w-full">
+        <Worker
+          workerUrl={`https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js`}
+        >
+          <Viewer fileUrl={fileUrl} plugins={[defaultLayoutPluginInstance]} />
+        </Worker>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex justify-center items-center h-full">
+      <Image
+        src={fileUrl}
+        alt="Certificate"
+        width={800}
+        height={600}
+        className="object-contain max-h-[750px]"
+        quality={100}
+      />
+    </div>
+  );
+};
 
 export default function CertificationsSection() {
   const [certs, setCerts] = useState<Certification[]>([]);
@@ -49,7 +88,7 @@ export default function CertificationsSection() {
     );
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8">
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
@@ -65,28 +104,43 @@ export default function CertificationsSection() {
               className="relative h-96 w-full cursor-pointer group"
               onClick={() => setSelectedCert(cert)}
             >
-              {/* Envelope Card */}
               <div className="absolute inset-0 bg-white border-2 border-blue-100 rounded-lg shadow-md overflow-hidden transition-transform duration-300 group-hover:scale-105">
-                {/* Envelope Flap */}
                 <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-r from-blue-50 to-purple-50 transform origin-top -rotate-3 scale-x-105"></div>
 
-                {/* Certificate Preview (Larger Image) */}
                 <div className="absolute inset-0 pt-16 pb-6 px-6 flex flex-col">
                   <div className="flex-1 flex flex-col items-center justify-center">
                     <div className="relative w-40 h-40 mb-6">
-                      <Image
-                        src={cert.image}
-                        alt={cert.title}
-                        fill
-                        className="object-contain"
-                        quality={100}
-                      />
+                      {cert.fileType === "pdf" ? (
+                        <div className="flex items-center justify-center w-full h-full bg-gray-100 rounded-lg">
+                          <svg
+                            className="w-20 h-20 text-blue-500"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                            ></path>
+                          </svg>
+                        </div>
+                      ) : (
+                        <Image
+                          src={cert.fileUrl}
+                          alt={cert.title}
+                          fill
+                          className="object-contain"
+                          quality={100}
+                        />
+                      )}
                     </div>
                     <h3 className="text-xl font-bold text-center text-gray-800">
                       {cert.title}
                     </h3>
                     <p className="text-gray-500 mt-2 text-sm">
-                      Click to view full certificate
+                      Click to view certificate
                     </p>
                   </div>
                   <div className="flex justify-between text-sm text-gray-400">
@@ -109,14 +163,14 @@ export default function CertificationsSection() {
         </div>
       </div>
 
-      {/* Expanded Certificate Modal */}
+      {/* Unified Viewer Modal */}
       {selectedCert && (
         <div
           className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
           onClick={() => setSelectedCert(null)}
         >
           <div
-            className="bg-white rounded-lg w-full max-w-4xl h-[90vh] overflow-hidden shadow-2xl flex flex-col"
+            className="bg-white rounded-lg w-full max-w-6xl h-[90vh] overflow-hidden shadow-2xl flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-center p-6 border-b">
@@ -131,52 +185,35 @@ export default function CertificationsSection() {
               </button>
             </div>
 
-            <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-8 p-6 overflow-auto">
-              {/* Large Certificate Image - Now Clickable */}
-              <div
-                className="relative w-full h-full min-h-[400px] cursor-zoom-in"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  window.open(selectedCert.image, "_blank");
-                }}
-              >
-                <CertificateViewer fileUrl={selectedCert.image} />
-                <Image
-                  src={selectedCert.image}
-                  alt={selectedCert.title}
-                  fill
-                  className="object-contain hover:opacity-90 transition-opacity"
-                  quality={100}
-                />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                  <div className="bg-black bg-opacity-50 text-white px-4 py-2 rounded-lg">
-                    Click to view full size
-                  </div>
-                </div>
-              </div>
+            <div className="flex-1 overflow-auto">
+              <CertificateViewer
+                fileUrl={selectedCert.fileUrl}
+                fileType={selectedCert.fileType}
+              />
+            </div>
 
-              {/* Detailed Information */}
-              <div className="space-y-6">
-                <div className="space-y-2">
-                  <h4 className="text-xl font-semibold">Issuer</h4>
+            <div className="p-6 border-t">
+              <div className="space-y-4">
+                <div>
+                  <h4 className="text-lg font-semibold">Issuer</h4>
                   <p className="text-gray-600">{selectedCert.issuer}</p>
                 </div>
 
-                <div className="space-y-2">
-                  <h4 className="text-xl font-semibold">Description</h4>
+                <div>
+                  <h4 className="text-lg font-semibold">Description</h4>
                   <p className="text-gray-700 whitespace-pre-line">
                     {selectedCert.description}
                   </p>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 pt-4">
+                <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <h4 className="text-lg font-medium">Date Earned</h4>
+                    <h4 className="text-lg font-semibold">Date Earned</h4>
                     <p className="text-gray-600">{selectedCert.date}</p>
                   </div>
                   {selectedCert.credentialId && (
                     <div>
-                      <h4 className="text-lg font-medium">Credential ID</h4>
+                      <h4 className="text-lg font-semibold">Credential ID</h4>
                       <p className="text-gray-600">
                         {selectedCert.credentialId}
                       </p>
@@ -184,15 +221,6 @@ export default function CertificationsSection() {
                   )}
                 </div>
               </div>
-            </div>
-
-            <div className="p-4 border-t flex justify-end">
-              <button
-                onClick={() => setSelectedCert(null)}
-                className="px-6 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
-              >
-                Close
-              </button>
             </div>
           </div>
         </div>
