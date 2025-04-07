@@ -39,7 +39,7 @@ export default function Home() {
             insights.
           </p>
 
-          <div className="opacity-0 animate-slideUp [animation-fill-mode:forwards] [animation-delay:400ms]">
+          <div className="opacity-20 animate-slideUp [animation-fill-mode:forwards] [animation-delay:400ms]">
             <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-blue-500/20">
               Get Started
             </button>
