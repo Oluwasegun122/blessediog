@@ -130,7 +130,6 @@ export default function CertificationsSection() {
           </Link>
         </div>
       </div>
-
       {/* Certificate Modal Viewer */}
       {selectedCert && (
         <div
@@ -147,20 +146,16 @@ export default function CertificationsSection() {
               </h3>
               <button
                 onClick={() => setSelectedCert(null)}
-                className="text-gray-500 hover:text-gray-700 text-2xl hidden"
+                className="text-gray-500 hover:text-gray-700 text-2xl"
               >
                 ✕
               </button>
             </div>
 
             <div className="flex-1 overflow-auto">
-              <Image
-                src={selectedCert.image}
-                alt="Certificate"
-                width={800}
-                height={600}
-                className="object-contain max-h-full"
-                quality={100}
+              <CertificateViewer
+                fileUrl={selectedCert.image}
+                fileType={selectedCert.fileType}
               />
             </div>
 
@@ -186,7 +181,7 @@ export default function CertificationsSection() {
             </div>
           </div>
         </div>
-      )}
+      )}{" "}
     </section>
   );
 }
