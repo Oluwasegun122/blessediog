@@ -46,24 +46,24 @@ const ProjectPage = () => {
 
   return (
     <>
-    <div className="px-5 max-w-4xl mx-auto">
-      <h1 className="text-4xl font-bold text-center mb-6">{project.title}</h1>
+      <div className="px-5 max-w-4xl mx-auto mt-20">
+        <h1 className="text-4xl font-bold text-center mb-6">{project.title}</h1>
 
-      <div className="relative w-full h-64 md:h-96 mb-6">
-        <Image
-          src={project.image}
-          alt={project.title}
-          layout="fill"
-          objectFit="cover"
-          className="rounded-lg shadow-md"
-        />
+        <div className="relative w-full h-64 md:h-96 mb-6">
+          <Image
+            src={project.image}
+            alt={project.title}
+            layout="fill"
+            objectFit="cover"
+            className="rounded-lg shadow-md"
+          />
+        </div>
+
+        <p className="text-lg text-gray-700 leading-relaxed">
+          {project.contents}
+        </p>
       </div>
-
-      <p className="text-lg text-gray-700 leading-relaxed">
-        {project.contents}
-      </p>
-    </div>
-    <Footer />
+      <Footer />
     </>
   );
 };
