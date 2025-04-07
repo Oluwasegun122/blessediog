@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 
 interface Project {
   id: number;
@@ -12,8 +12,8 @@ interface Project {
   liveUrl?: string;
 }
 
-const projects: Project[] = [
-  {
+const projects: Record<string, Project> = {
+  "1": {
     id: 1,
     title: "E-Commerce Website",
     image: "/projects/ecommerce.jpg",
@@ -25,7 +25,7 @@ const projects: Project[] = [
     githubUrl: "https://github.com/yourusername/ecommerce-site",
     liveUrl: "https://ecommerce-demo.example.com",
   },
-  {
+  "2": {
     id: 2,
     title: "Portfolio Website",
     image: "/projects/portfolio.jpg",
@@ -37,7 +37,7 @@ const projects: Project[] = [
     githubUrl: "https://github.com/yourusername/portfolio",
     liveUrl: "https://yourportfolio.example.com",
   },
-  {
+  "3": {
     id: 3,
     title: "School Management Portal",
     image: "/projects/school-portal.jpg",
@@ -49,7 +49,7 @@ const projects: Project[] = [
     githubUrl: "https://github.com/yourusername/school-portal",
     liveUrl: "https://school-portal.example.com",
   },
-  {
+  "4": {
     id: 4,
     title: "Data Analytics Portfolio",
     image: "/projects/data-portfolio.jpg",
@@ -61,19 +61,23 @@ const projects: Project[] = [
     githubUrl: "https://github.com/yourusername/data-portfolio",
     liveUrl: "https://data-portfolio.example.com",
   },
-];
+};
 
-export async function GET() {
-  // Return only essential data for listing page
-  const projectList = projects.map((project) => ({
-    id: project.id,
-    title: project.title,
-    image: project.image,
-    description: project.description,
-    slug: project.slug,
-    tags: project.tags,
-    date: project.date,
-  }));
+export async function GET(
+  request: NextRequest,
+  context: { params: Promise<{ id: string }> } // ✅ Treat `params` as a Promise
+) {
+  const { id } = await context.params; // ✅ Await the params
 
-  return NextResponse.json(projectList);
+  if (!id) {
+    return NextResponse.json({ error: "ID is required" }, { status: 400 });
+  }
+
+  const project = projects[id];
+
+  if (!project) {
+    return NextResponse.json({ error: "Project not found" }, { status: 404 });
+  }
+
+  return NextResponse.json(project);
 }
