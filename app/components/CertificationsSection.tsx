@@ -31,7 +31,7 @@ export default function CertificationsSection() {
           fileType:
             cert.fileType || (cert.image.endsWith(".pdf") ? "pdf" : "image"),
         }));
-        setCerts(enhancedData.slice(0, 3));
+        setCerts(enhancedData.slice(0, 10));
       })
       .catch((err) => console.error("Error fetching certifications:", err))
       .finally(() => setLoading(false));
@@ -56,7 +56,7 @@ export default function CertificationsSection() {
     );
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <section className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
@@ -146,7 +146,7 @@ export default function CertificationsSection() {
               </h3>
               <button
                 onClick={() => setSelectedCert(null)}
-                className="text-gray-500 hover:text-gray-700 text-2xl"
+                className="text-gray-500 hover:text-gray-700 text-2xl hidden"
               >
                 ✕
               </button>
