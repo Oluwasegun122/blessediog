@@ -23,18 +23,34 @@ const ProjectPage = () => {
   const router = useRouter();
   const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!id) return;
+    if (!id) {
+      setError("Project ID is missing");
+      setLoading(false);
+      return;
+    }
 
     const fetchProject = async () => {
       try {
+        setLoading(true);
         const res = await fetch(`/api/projects/${id}`);
-        if (!res.ok) throw new Error("Project not found");
+
+        if (!res.ok) {
+          throw new Error(
+            res.status === 404
+              ? "Project not found"
+              : `Failed to fetch project (status: ${res.status})`
+          );
+        }
+
         const data: Project = await res.json();
         setProject(data);
-      } catch (error) {
-        console.error(error);
+        setError(null);
+      } catch (err) {
+        console.error("Fetch error:", err);
+        setError(err instanceof Error ? err.message : "Failed to load project");
         router.push("/404");
       } finally {
         setLoading(false);
@@ -45,12 +61,25 @@ const ProjectPage = () => {
   }, [id, router]);
 
   if (loading) return <Loading />;
-  if (!project)
+
+  if (error || !project) {
     return (
-      <div className="min-h-screen flex items-center justify-center text-red-500">
-        Project not found
+      <div className="min-h-screen flex flex-col items-center justify-center p-4">
+        <div className="max-w-md text-center">
+          <h1 className="text-2xl font-bold text-red-600 mb-4">
+            Error Loading Project
+          </h1>
+          <p className="text-gray-700 mb-6">{error || "Project not found"}</p>
+          <button
+            onClick={() => router.push("/projects")}
+            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+          >
+            Back to Projects
+          </button>
+        </div>
       </div>
     );
+  }
 
   return (
     <>
@@ -63,7 +92,12 @@ const ProjectPage = () => {
             </h1>
             {project.date && (
               <p className="text-lg text-gray-500 mb-6">
-                Completed: {new Date(project.date).toLocaleDateString()}
+                Completed:{" "}
+                {new Date(project.date).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
               </p>
             )}
             <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
@@ -78,6 +112,10 @@ const ProjectPage = () => {
               className="object-cover"
               quality={90}
               priority
+              onError={(e) => {
+                (e.target as HTMLImageElement).src =
+                  "/images/placeholder-project.jpg";
+              }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/10 to-transparent"></div>
           </div>
@@ -109,7 +147,7 @@ const ProjectPage = () => {
             <div className="prose prose-lg max-w-none text-gray-700 mb-12">
               {project.contents.split("\n").map((paragraph, i) => (
                 <p key={i} className="mb-4">
-                  {paragraph}
+                  {paragraph || <br />}
                 </p>
               ))}
             </div>
