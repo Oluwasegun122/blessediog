@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <div className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden">
+      <div className="relative !mt-0 min-h-screen flex items-center justify-center bg-black overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -28,7 +28,7 @@ export default function Home() {
 
         {/* Content */}
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto animate-fadeIn">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white opacity-40 animate-slideUp [animation-fill-mode:forwards]">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white opacity-80 animate-slideUp [animation-fill-mode:forwards]">
             Hello there.
           </h1>
 
