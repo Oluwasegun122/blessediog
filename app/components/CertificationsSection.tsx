@@ -17,6 +17,7 @@ interface Certification {
 export default function CertificationsSection() {
   const [certs, setCerts] = useState<Certification[]>([]);
   const [loading, setLoading] = useState(true);
+  const [selectedCert, setSelectedCert] = useState<Certification | null>(null);
 
   useEffect(() => {
     fetch("/api/certifications")
@@ -60,49 +61,34 @@ export default function CertificationsSection() {
           {certs.map((cert) => (
             <div
               key={cert.id}
-              className="relative h-80 w-full perspective-1000 cursor-pointer group"
-              onClick={() => {}}
+              className="relative h-80 w-full cursor-pointer"
+              onClick={() => setSelectedCert(cert)}
             >
-              {/* Front Side (Envelope) */}
-              <div className="absolute inset-0 bg-white border-2 border-blue-100 rounded-xl p-6 shadow-md transition-all duration-500 transform-style-preserve-3d backface-hidden flex flex-col">
-                <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-t-xl"></div>
-                <div className="flex-1 flex flex-col items-center justify-center pt-8">
-                  <div className="relative w-20 h-20 mb-4">
-                    <Image
-                      src={cert.image}
-                      alt={cert.title}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                  <h3 className="text-xl font-bold text-center text-gray-800">
-                    {cert.title}
-                  </h3>
-                  <p className="text-gray-500 mt-2 text-sm">Click to view</p>
-                </div>
-                <div className="flex justify-between text-sm text-gray-400">
-                  <span>{cert.issuer}</span>
-                  <span>{cert.date}</span>
-                </div>
-              </div>
+              {/* Envelope Design */}
+              <div className="absolute inset-0 bg-white border-2 border-blue-100 rounded-lg shadow-md overflow-hidden">
+                {/* Envelope Flap */}
+                <div className="absolute top-0 left-0 right-0 h-10 bg-gradient-to-r from-blue-50 to-purple-50 transform origin-top -rotate-2 scale-x-105"></div>
 
-              {/* Back Side (Details) */}
-              <div className="absolute inset-0 bg-white rounded-xl p-6 shadow-lg transform-style-preserve-3d backface-hidden rotate-y-180 flex flex-col">
-                <h3 className="text-xl font-bold text-blue-600">
-                  {cert.title}
-                </h3>
-                <p className="text-gray-600 mt-2">Issued by {cert.issuer}</p>
-                <div className="my-4 p-4 bg-gray-50 rounded">
-                  <p className="text-gray-700">
-                    {cert.description ||
-                      "Professional certification demonstrating expertise in this area."}
-                  </p>
-                </div>
-                <div className="mt-auto text-sm text-gray-500 space-y-1">
-                  <p>Issued: {cert.date}</p>
-                  {cert.credentialId && (
-                    <p>Credential ID: {cert.credentialId}</p>
-                  )}
+                {/* Envelope Body */}
+                <div className="absolute inset-0 pt-12 pb-6 px-6 flex flex-col">
+                  <div className="flex-1 flex flex-col items-center justify-center">
+                    <div className="relative w-20 h-20 mb-4">
+                      <Image
+                        src={cert.image}
+                        alt={cert.title}
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                    <h3 className="text-xl font-bold text-center text-gray-800">
+                      {cert.title}
+                    </h3>
+                    <p className="text-gray-500 mt-2 text-sm">Click to view</p>
+                  </div>
+                  <div className="flex justify-between text-sm text-gray-400">
+                    <span>{cert.issuer}</span>
+                    <span>{cert.date}</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -119,17 +105,56 @@ export default function CertificationsSection() {
         </div>
       </div>
 
-      <style jsx global>{`
-        .transform-style-preserve-3d {
-          transform-style: preserve-3d;
-        }
-        .backface-hidden {
-          backface-visibility: hidden;
-        }
-        .rotate-y-180 {
-          transform: rotateY(180deg);
-        }
-      `}</style>
+      {/* Modal for Certificate Details */}
+      {selectedCert && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+          onClick={() => setSelectedCert(null)}
+        >
+          <div
+            className="bg-white rounded-lg max-w-md w-full p-6 shadow-xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-start">
+              <h3 className="text-2xl font-bold text-gray-800">
+                {selectedCert.title}
+              </h3>
+              <button
+                onClick={() => setSelectedCert(null)}
+                className="text-gray-500 hover:text-gray-700"
+              >
+                ✕
+              </button>
+            </div>
+
+            <p className="text-gray-600 mt-2">
+              Issued by {selectedCert.issuer}
+            </p>
+
+            <div className="my-4 p-4 bg-gray-50 rounded">
+              <p className="text-gray-700">{selectedCert.description}</p>
+            </div>
+
+            <div className="mt-6 flex justify-center">
+              <div className="relative w-32 h-32">
+                <Image
+                  src={selectedCert.image}
+                  alt={selectedCert.title}
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            </div>
+
+            <div className="mt-6 text-sm text-gray-500 space-y-1">
+              <p>Issued: {selectedCert.date}</p>
+              {selectedCert.credentialId && (
+                <p>Credential ID: {selectedCert.credentialId}</p>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
