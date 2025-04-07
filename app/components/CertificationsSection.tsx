@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import CertificateViewer from "./CertificateViewer";
 
 interface Certification {
   id: number;
@@ -139,6 +140,7 @@ export default function CertificationsSection() {
                   window.open(selectedCert.image, "_blank");
                 }}
               >
+                <CertificateViewer fileUrl={selectedCert.image} />
                 <Image
                   src={selectedCert.image}
                   alt={selectedCert.title}
