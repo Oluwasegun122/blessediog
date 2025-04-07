@@ -7,7 +7,7 @@ const certifications = [
     issuer: "Coursera",
     date: "Jan 2023",
     image:
-      "/images/alx-aice-ai-career-essentials-certificate-faith-obajafa.png",
+      "/certification_img/alx-aice-ai-career-essentials-certificate-faith-obajafa.png",
     fileType: "image",
     credentialId: "FSD-2023-0256",
     description: `This comprehensive certification validates my proficiency in building end-to-end web applications. 
