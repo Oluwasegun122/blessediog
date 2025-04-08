@@ -59,7 +59,7 @@ export default function DocumentModal({
                 {buttonText}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 ml-1 mt-4 inline"
+                  className="h-4 w-4 ml-1 inline"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -73,7 +73,7 @@ export default function DocumentModal({
                 </svg>
               </button>
               <div
-                className={`absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 ${
+                className={`absolute right-0 mt-6 w-48 bg-white rounded-md shadow-lg py-1 z-50 ${
                   placement === "navbar" ? "hidden group-hover:block" : ""
                 }`}
               >
