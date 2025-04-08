@@ -185,7 +185,7 @@ const AboutPage = () => {
             Skills and Expertise
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-200">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Technical Skills */}
             <div>
               <h3 className="text-xl font-semibold mb-4 text-primary">
@@ -199,7 +199,7 @@ const AboutPage = () => {
                       {skillGroup.items.map((skill, skillIndex) => (
                         <span
                           key={skillIndex}
-                          className="px-3 py-1 text-gray-200 bg-gray-800 rounded-full text-sm"
+                          className="px-3 py-1 bg-gray-800 rounded-full text-sm"
                         >
                           {skill}
                         </span>
@@ -211,7 +211,7 @@ const AboutPage = () => {
             </div>
 
             {/* Analytical Skills */}
-            <div>
+            <div className="text-gray-200">
               <h3 className="text-xl font-semibold mb-4 text-primary">
                 Analytical Skills
               </h3>
