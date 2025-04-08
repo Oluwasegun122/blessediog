@@ -5,7 +5,7 @@ export async function GET() {
   const aboutData = {
     name: "Faith Obajafa",
     bio: "A detail-driven data analyst with a passion for uncovering trends and insights hidden in data. Over the past five years, I've honed my ability to transform complex datasets into actionable strategies that drive growth and innovation.",
-    avatar: "/images/faith-avatar.jpg", // Update with your image path
+    avatar: "/images/img.jpg", // Update with your image path
     specializations: [
       "Extracting actionable insights from complex data sets",
       "Creating impactful data visualizations to tell compelling stories",

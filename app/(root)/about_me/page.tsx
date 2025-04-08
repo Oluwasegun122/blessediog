@@ -71,7 +71,7 @@ const AboutPage = () => {
 
   return (
     <>
-      <div className="max-w-6xl mx-auto px-5 py-10">
+      <div className="max-w-6xl mx-auto px-5 py-10 mt-10">
         {/* Introduction Section */}
         <section className="mb-16">
           <div className="flex flex-col md:flex-row items-center gap-8">
@@ -123,7 +123,7 @@ const AboutPage = () => {
               <h3 className="text-xl font-semibold mb-4 text-primary">
                 Technical Skills
               </h3>
-              <div className="space-y-4">
+              <div className="space-y-4 bg-gray-200">
                 {data.technicalSkills.map((skillGroup, index) => (
                   <div key={index}>
                     <h4 className="font-medium mb-2">{skillGroup.category}</h4>
