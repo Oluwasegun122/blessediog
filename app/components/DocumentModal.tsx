@@ -100,19 +100,19 @@ export default function DocumentModal({
               </div>
             </>
           ) : (
-            <div className="flex flex-col gap-y-2 hidden md:block">
+            <div className="flex flex-col space-y-3 hidden md:block">
               <div>
                 <button
                   onClick={() => {
                     setActiveDoc("cv");
                     setIsOpen(true);
                   }}
-                  className={`${getButtonClass()} w-full text-left justify-between`}
+                  className={`${getButtonClass()} w-full flex items-center justify-between px-4 py-2.5`}
                 >
-                  <span>View CV</span>
+                  <span className="mr-2">View CV</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 ml-2"
+                    className="h-5 w-5 text-current"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -132,12 +132,12 @@ export default function DocumentModal({
                     setActiveDoc("resume");
                     setIsOpen(true);
                   }}
-                  className={`${getButtonClass()} w-full text-left justify-between`}
+                  className={`${getButtonClass()} w-full flex items-center justify-between px-4 py-2.5`}
                 >
-                  <span>View Resume</span>
+                  <span className="mr-2">View Resume</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 ml-2"
+                    className="h-5 w-5 text-current"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
