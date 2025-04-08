@@ -55,7 +55,9 @@ export default function DocumentModal({
         >
           {triggerType === "dropdown" ? (
             <>
-              <button className={`${getButtonClass()} bg-gradient-to-r p-2 from-blue-600 to-purple-600 rounded-full`}>
+              <button
+                className={`${getButtonClass()} bg-gray-800 text-white rounded-lg hover:bg-gray-700 rounded-full`}
+              >
                 {buttonText}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +75,7 @@ export default function DocumentModal({
                 </svg>
               </button>
               <div
-                className={`absolute right-0 mt-6 w-48 bg-white rounded-md shadow-lg py-1 z-50 ${
+                className={`absolute right-0 mt-8 w-48 bg-white rounded-md shadow-lg py-1 z-50 ${
                   placement === "navbar" ? "hidden group-hover:block" : ""
                 }`}
               >
@@ -98,7 +100,7 @@ export default function DocumentModal({
               </div>
             </>
           ) : (
-            <div className="flex-col space-x-2 hidden md:block">
+            <div className="flex-col hidden md:block">
               <div>
                 <button
                   onClick={() => {
