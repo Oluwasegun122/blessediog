@@ -305,7 +305,7 @@ const AboutPage = () => {
             triggerType="button"
             placement="about"
             buttonStyle="secondary"
-            buttonText="View My Resume"
+            buttonText="View My"
           />
         </section>
         {/* Call to Action */}

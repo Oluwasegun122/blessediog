@@ -98,7 +98,7 @@ export default function DocumentModal({
               </div>
             </>
           ) : (
-            <div className="flex-col">
+            <div className="flex-col gap-2 hidden md:block">
               <div>
                 <button
                   onClick={() => {
@@ -118,7 +118,7 @@ export default function DocumentModal({
                   }}
                   className={getButtonClass()}
                 >
-                  {`${buttonText} resume`}
+                  {`${buttonText} Resume`}
                 </button>
               </div>
             </div>
