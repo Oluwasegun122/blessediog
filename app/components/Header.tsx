@@ -57,14 +57,14 @@ const Header = () => {
               <a
                 href="/documents/Faith_Obajafa_CV.pdf"
                 download="Faith_Obajafa_CV.pdf"
-                className="text-white hover:text-blue-300 px-3 py-2 flex items-center"
+                className="text-white bg-gray-700 hover:text-blue-300 px-3 py-2 flex items-center"
               >
                 <span>Download CV</span>
               </a>
               <a
                 href="/documents/Faith_Obajafa_Resume.pdf"
                 download="Faith_Obajafa_Resume.pdf"
-                className="text-white hover:text-blue-300 px-3 py-2 flex items-center"
+                className="text-white bg-gray-700 hover:text-blue-300 px-3 py-2 flex items-center"
               >
                 <span>Resume</span>
               </a>
@@ -131,7 +131,7 @@ const Header = () => {
             <a
               href="/documents/Faith_Obajafa_Resume.pdf"
               download="Faith_Obajafa_Resume.pdf"
-              className="hover:text-blue-300 mt-2 px-4 py-2 text-white rounded-full font-medium text-center"
+              className="hover:text-blue-300 mt-2 bg-gray-700 px-4 py-2 text-white rounded-full font-medium text-center"
             >
               <span>Resume</span>
             </a>
