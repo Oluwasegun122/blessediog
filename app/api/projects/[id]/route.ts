@@ -11,7 +11,19 @@ export async function GET(
     {
       id: "1",
       title: "Sample Project",
-      image: "/images/pro_img1.jpg",
+      image: "/images/pro_img2.jpg",
+      description: "This is a sample project description.",
+      contents: "Detailed content about the project...",
+      slug: "sample-project",
+      tags: ["React", "Next.js"],
+      date: "2023-01-15",
+      githubUrl: "https://github.com/example",
+      liveUrl: "https://example.com",
+    },
+    {
+      id: "8",
+      title: "Sample Project",
+      image: "/images/pro_img2.jpg",
       description: "This is a sample project description.",
       contents: "Detailed content about the project...",
       slug: "sample-project",
@@ -23,7 +35,7 @@ export async function GET(
     {
       id: "2",
       title: "Portfolio Website",
-      image: "/images/pro_img2.jpg",
+      image: "/images/pro_img1.jpg",
       description:
         "A responsive personal portfolio showcasing skills and projects with dark mode support.",
       slug: "portfolio-website",
