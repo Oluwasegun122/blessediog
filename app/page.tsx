@@ -14,7 +14,7 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/pro_img1.jpg"
+            src="/images/pro_img2.jpeg"
             alt="Hero Background"
             layout="fill"
             objectFit="cover"
@@ -42,18 +42,22 @@ export default function Home() {
           </p>
 
           <div className="opacity-80 animate-slideUp [animation-fill-mode:forwards] [animation-delay:400ms]">
-            <Link
-              href="/about_me"
-              className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-blue-500/20"
-            >
-              About Me
-            </Link>
-            <DocumentModal
-              triggerType="button"
-              buttonStyle="primary"
-              placement="hero"
-              buttonText="View My CV"
-            />
+            <div>
+              <Link
+                href="/about_me"
+                className="px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-blue-500/20"
+              >
+                About Me
+              </Link>
+            </div>
+            <div>
+              <DocumentModal
+                triggerType="button"
+                buttonStyle="primary"
+                placement="hero"
+                buttonText="View My"
+              />
+            </div>
           </div>
         </div>
       </div>
