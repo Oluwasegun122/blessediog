@@ -185,9 +185,9 @@ const AboutPage = () => {
             Skills and Expertise
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
             {/* Technical Skills */}
-            <div>
+            <div className="text-gray-200">
               <h3 className="text-xl font-semibold mb-4 text-primary">
                 Technical Skills
               </h3>
@@ -211,7 +211,7 @@ const AboutPage = () => {
             </div>
 
             {/* Analytical Skills */}
-            <div className="text-gray-200">
+            <div>
               <h3 className="text-xl font-semibold mb-4 text-primary">
                 Analytical Skills
               </h3>

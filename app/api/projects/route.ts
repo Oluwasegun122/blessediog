@@ -4,7 +4,7 @@ const projects = [
   {
     id: "1",
     title: "Sales Performance Analytics Dashboard",
-    image: "/images/sales-dashboard.jpg",
+    image: "/images/pro_img1.jpg",
     description:
       "Interactive Power BI dashboard analyzing multi-region sales trends and product performance.",
     slug: "sales-analytics-dashboard",
@@ -14,7 +14,7 @@ const projects = [
   {
     id: "2",
     title: "Customer Churn Prediction Model",
-    image: "/images/churn-analysis.jpg",
+    image: "/images/pro_img1.jpg",
     description:
       "Machine learning model predicting customer churn with 85% accuracy for telecom sector.",
     slug: "churn-prediction-model",
@@ -23,7 +23,7 @@ const projects = [
   },
   {
     id: "3",
-    image: "/images/education-analytics.jpg",
+    image: "/images/pro_img1.jpg",
     title: "Educational Data Analysis Platform",
     description:
       "Comprehensive analysis of student performance and institutional effectiveness metrics.",
@@ -34,7 +34,7 @@ const projects = [
   {
     id: "4",
     title: "Aircraft Maintenance Optimization",
-    image: "/images/aerospace-analytics.jpg",
+    image: "/images/pro_img1.jpg",
     description:
       "Predictive maintenance system reducing aircraft downtime by 18%.",
     slug: "aircraft-maintenance-system",
@@ -44,7 +44,7 @@ const projects = [
   {
     id: "5",
     title: "Player Behavior Analytics",
-    image: "/images/gaming-analytics.jpg",
+    image: "/images/pro_img1.jpg",
     description:
       "Behavioral segmentation model for gaming industry with 22% revenue impact.",
     slug: "gaming-analytics",
@@ -54,7 +54,7 @@ const projects = [
   {
     id: "6",
     title: "Data Science Portfolio",
-    image: "/images/data-portfolio.jpg",
+    image: "/images/pro_img1.jpg",
     description: "Showcase of data analysis projects and competition entries.",
     slug: "data-science-portfolio",
     tags: ["Python", "Jupyter", "Data Visualization"],
