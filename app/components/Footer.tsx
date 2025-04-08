@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FaFacebook, FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
+import DownloadButtons from "./DownloadButtons";
 
 const Footer = () => {
   return (
@@ -17,20 +18,50 @@ const Footer = () => {
         <div>
           <h2 className="text-lg font-bold">Quick Links</h2>
           <ul className="space-y-2 text-sm">
-            <li><Link href="/" className="hover:text-gray-300">Home</Link></li>
-            <li><Link href="/projects" className="hover:text-gray-300">Projects</Link></li>
-            <li><Link href="/about_me" className="hover:text-gray-300">About Me</Link></li>
+            <li>
+              <Link href="/" className="hover:text-gray-300">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/projects" className="hover:text-gray-300">
+                Projects
+              </Link>
+            </li>
+            <li>
+              <Link href="/about_me" className="hover:text-gray-300">
+                About Me
+              </Link>
+            </li>
           </ul>
+          // Add near the end of your about page, before the Footer
+          <section className="mb-16">
+            <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-gray-700">
+              Professional Documents
+            </h2>
+            <p className="text-lg mb-4">
+              Download my complete CV or condensed resume:
+            </p>
+            <DownloadButtons />
+          </section>
         </div>
 
         {/* Social Media */}
         <div>
           <h2 className="text-lg font-bold">Follow Me</h2>
           <div className="flex justify-center md:justify-start space-x-4 text-xl">
-            <Link href="#" className="hover:text-gray-300"><FaFacebook /></Link>
-            <Link href="#" className="hover:text-gray-300"><FaTwitter /></Link>
-            <Link href="#" className="hover:text-gray-300"><FaLinkedin /></Link>
-            <Link href="#" className="hover:text-gray-300"><FaGithub /></Link>
+            <Link href="#" className="hover:text-gray-300">
+              <FaFacebook />
+            </Link>
+            <Link href="#" className="hover:text-gray-300">
+              <FaTwitter />
+            </Link>
+            <Link href="#" className="hover:text-gray-300">
+              <FaLinkedin />
+            </Link>
+            <Link href="#" className="hover:text-gray-300">
+              <FaGithub />
+            </Link>
           </div>
         </div>
       </div>
