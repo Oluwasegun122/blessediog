@@ -60,7 +60,7 @@ const Header = () => {
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? (
-              <FaTimes size={24} className="text-purple-600" />
+              <FaTimes size={24} className="text-gray-700" />
             ) : (
               <FaBars size={24} />
             )}
@@ -98,7 +98,7 @@ const Header = () => {
           </Link>
           <Link
             href="/contact"
-            className="mt-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-full font-medium text-center"
+            className="mt-2 px-4 py-2 bg-gray-700 text-white rounded-full font-medium text-center"
             onClick={() => setIsOpen(false)}
           >
             Contact Me

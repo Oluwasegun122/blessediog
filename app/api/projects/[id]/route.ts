@@ -23,7 +23,7 @@ export async function GET(
     {
       id: "2",
       title: "Portfolio Website",
-      image: "/projects/pro_img2.jpg",
+      image: "/images/pro_img2.jpg",
       description:
         "A responsive personal portfolio showcasing skills and projects with dark mode support.",
       slug: "portfolio-website",
@@ -35,7 +35,7 @@ export async function GET(
     {
       id: "3",
       title: "School Management Portal",
-      image: "/projects/pro_img3.jpg",
+      image: "/images/pro_img3.jpg",
       description:
         "Comprehensive system for student records, payments, and academic tracking.",
       slug: "school-portal",
@@ -47,7 +47,7 @@ export async function GET(
     {
       id: "4",
       title: "Data Analytics Portfolio",
-      image: "/projects/pro_img1.jpg",
+      image: "/images/pro_img1.jpg",
       description:
         "Interactive portfolio showcasing data analysis projects and visualizations.",
       slug: "data-analytics-portfolio",
