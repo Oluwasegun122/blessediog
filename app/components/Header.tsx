@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import { FaBars, FaTimes } from "react-icons/fa";
-import DocumentModal from "./DocumentModal";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -62,10 +61,13 @@ const Header = () => {
               >
                 <span>Download CV</span>
               </a>
-              <span className="text-white bg-gray-700 rounded-full hover:text-purple-600 px-3 py-2 flex items-center">
-                <DocumentModal />
+              <a
+                href="/documents/Faith_Obajafa_Resume.pdf"
+                download="Faith_Obajafa_Resume.pdf"
+                className="text-white bg-gray-700 rounded-full hover:text-purple-600 px-3 py-2 flex items-center"
+              >
                 <span>Resume</span>
-              </span>
+              </a>
             </div>
           </div>
 

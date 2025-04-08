@@ -56,15 +56,10 @@ const Footer = () => {
         </div>
         <div>
           <div className="flex justify-center md:justify-start space-x-4 text-xl">
-            <section className="mb-16">
-              <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-gray-700">
-                Professional Documents
-              </h2>
-              <p className="text-lg mb-4">
-                View or download my complete CV or condensed resume:
-              </p>
-              <DocumentModal />
-            </section>
+            <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-gray-700">
+              Professional Documents
+            </h2>
+            <DocumentModal />
           </div>
         </div>
       </div>
