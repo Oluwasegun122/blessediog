@@ -55,7 +55,7 @@ export default function DocumentModal({
         >
           {triggerType === "dropdown" ? (
             <>
-              <button className={`${getButtonClass()} bg-gradient-to-r from-blue-600 to-purple-600`}>
+              <button className={`${getButtonClass()} bg-gradient-to-r p-2 from-blue-600 to-purple-600 rounded-full`}>
                 {buttonText}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
