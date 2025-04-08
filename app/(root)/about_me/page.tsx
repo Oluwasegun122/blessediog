@@ -90,7 +90,7 @@ const AboutPage = () => {
               <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gradient bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
                 Hi, I'm {data.name}
               </h1>
-              <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+              <p className="text-lg md:text-xl text-gray-500 leading-relaxed">
                 {data.bio}
               </p>
             </div>
@@ -123,7 +123,7 @@ const AboutPage = () => {
               <h3 className="text-xl font-semibold mb-4 text-primary">
                 Technical Skills
               </h3>
-              <div className="space-y-4 bg-gray-200">
+              <div className="space-y-4">
                 {data.technicalSkills.map((skillGroup, index) => (
                   <div key={index}>
                     <h4 className="font-medium mb-2">{skillGroup.category}</h4>
@@ -131,7 +131,7 @@ const AboutPage = () => {
                       {skillGroup.items.map((skill, skillIndex) => (
                         <span
                           key={skillIndex}
-                          className="px-3 py-1 bg-gray-800 rounded-full text-sm"
+                          className="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-200"
                         >
                           {skill}
                         </span>
