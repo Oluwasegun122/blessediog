@@ -141,7 +141,7 @@ const AboutPage = () => {
 
   return (
     <>
-      <div className="max-w-6xl mx-auto px-5 py-10 mt-16">
+      <div className="max-w-6xl mx-auto px-5 py-10">
         {/* Introduction Section */}
         <section className="mb-16">
           <div className="flex flex-col md:flex-row items-center gap-8">
@@ -361,6 +361,15 @@ const AboutPage = () => {
               </ul>
             </div>
           </div>
+          <section className="mb-16">
+            <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-gray-700">
+              Professional Documents
+            </h2>
+            <p className="text-lg mb-4">
+              Download my complete CV or condensed resume:
+            </p>
+            <DownloadButtons />
+          </section>
         </section>
         {/* Call to Action */}
         <section className="mb-16 text-center">
@@ -449,16 +458,6 @@ const AboutPage = () => {
             or just chatting about the latest trends in data analytics, I'd love
             to hear from you!
           </p>
-        </section>
-
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-gray-700">
-            Professional Documents
-          </h2>
-          <p className="text-lg mb-4">
-            Download my complete CV or condensed resume:
-          </p>
-          <DownloadButtons />
         </section>
       </div>
       <Footer />

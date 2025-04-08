@@ -9,7 +9,7 @@ const Header = () => {
 
   return (
     <nav className="fixed top-2 left-0 right-0 h-14 lg:h-16 bg-white rounded-full mx-5 shadow-md z-50">
-      <div className="max-w-7xl mx-auto px-2 sm:px-8 lg:px-8 h-full">
+      <div className="max-w-7xl mx-auto px-2 sm:px-8 lg:px-5 h-full">
         <div className="flex justify-between items-center h-full">
           {/* Left Logo */}
           <Link
@@ -57,14 +57,14 @@ const Header = () => {
               <a
                 href="/documents/Faith_Obajafa_CV.pdf"
                 download="Faith_Obajafa_CV.pdf"
-                className="text-white bg-gray-700 hover:text-blue-300 px-3 py-2 flex items-center"
+                className="text-white bg-gray-700 rounded-full hover:text-purple-600 px-3 py-2 flex items-center"
               >
                 <span>Download CV</span>
               </a>
               <a
                 href="/documents/Faith_Obajafa_Resume.pdf"
                 download="Faith_Obajafa_Resume.pdf"
-                className="text-white bg-gray-700 hover:text-blue-300 px-3 py-2 flex items-center"
+                className="text-white bg-gray-700 rounded-full hover:text-purple-600 px-3 py-2 flex items-center"
               >
                 <span>Resume</span>
               </a>
@@ -114,8 +114,8 @@ const Header = () => {
             About Me
           </Link>
           <Link
-            href="/contact"
-            className="mt-2 px-4 py-2 bg-gray-700 text-white rounded-full font-medium text-center"
+            href="#"
+            className="text-gray-700 hover:text-purple-600 font-medium py-2 border-b border-gray-100"
             onClick={() => setIsOpen(false)}
           >
             Contact Me
@@ -124,14 +124,14 @@ const Header = () => {
             <a
               href="/documents/Faith_Obajafa_CV.pdf"
               download="Faith_Obajafa_CV.pdf"
-              className=" hover:text-blue-300 mt-2 px-4 py-2 text-white rounded-full font-medium text-center"
+              className=" hover:text-purple-600 bg-gray-700 mt-2 px-4 py-2 text-white rounded-full font-medium text-center"
             >
               <span>Download CV</span>
             </a>
             <a
               href="/documents/Faith_Obajafa_Resume.pdf"
               download="Faith_Obajafa_Resume.pdf"
-              className="hover:text-blue-300 mt-2 bg-gray-700 px-4 py-2 text-white rounded-full font-medium text-center"
+              className="hover:text-purple-600 mt-2 bg-gray-700 px-4 py-2 text-white rounded-full font-medium text-center"
             >
               <span>Resume</span>
             </a>
