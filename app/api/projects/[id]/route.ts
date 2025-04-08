@@ -11,7 +11,7 @@ export async function GET(
     {
       id: "1",
       title: "Sample Project",
-      image: "/images/pro_img2.jpg",
+      image: "/images/pro_img1.jpg",
       description: "This is a sample project description.",
       contents: "Detailed content about the project...",
       slug: "sample-project",
@@ -23,7 +23,7 @@ export async function GET(
     {
       id: "8",
       title: "Sample Project",
-      image: "/images/pro_img2.jpg",
+      image: "/images/pro_img1.jpg",
       description: "This is a sample project description.",
       contents: "Detailed content about the project...",
       slug: "sample-project",
@@ -47,7 +47,7 @@ export async function GET(
     {
       id: "3",
       title: "School Management Portal",
-      image: "/images/pro_img3.jpg",
+      image: "/images/pro_img2.jpeg",
       description:
         "Comprehensive system for student records, payments, and academic tracking.",
       slug: "school-portal",
