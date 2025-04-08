@@ -55,10 +55,8 @@ const Footer = () => {
           </div>
         </div>
         <div>
+          <h2 className="text-lg font-bold">Documents</h2>
           <div className="flex justify-center md:justify-start space-x-4 text-xl">
-            <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-gray-700">
-              Professional Documents
-            </h2>
             <DocumentModal
               triggerType="link"
               placement="footer"

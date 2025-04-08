@@ -98,15 +98,30 @@ export default function DocumentModal({
               </div>
             </>
           ) : (
-            <button
-              onClick={() => {
-                setActiveDoc("cv");
-                setIsOpen(true);
-              }}
-              className={getButtonClass()}
-            >
-              {buttonText}
-            </button>
+            <div className="flex-col">
+              <div>
+                <button
+                  onClick={() => {
+                    setActiveDoc("cv");
+                    setIsOpen(true);
+                  }}
+                  className={getButtonClass()}
+                >
+                  {buttonText}
+                </button>
+              </div>
+              <div>
+                <button
+                  onClick={() => {
+                    setActiveDoc("resume");
+                    setIsOpen(true);
+                  }}
+                  className={getButtonClass()}
+                >
+                  {buttonText}
+                </button>
+              </div>
+            </div>
           )}
         </div>
       )}
