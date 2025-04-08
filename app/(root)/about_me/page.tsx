@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Loading from "@/app/components/Loading";
 import Footer from "@/app/components/Footer";
+import DownloadButtons from "@/app/components/DownloadButtons";
 
 interface AboutData {
   name: string;
@@ -140,7 +141,7 @@ const AboutPage = () => {
 
   return (
     <>
-      <div className="max-w-6xl mx-auto px-5 py-10">
+      <div className="max-w-6xl mx-auto px-5 py-10 mt-16">
         {/* Introduction Section */}
         <section className="mb-16">
           <div className="flex flex-col md:flex-row items-center gap-8">
@@ -165,7 +166,6 @@ const AboutPage = () => {
             </div>
           </div>
         </section>
-
         {/* Specialization Section */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-gray-700">
@@ -179,7 +179,6 @@ const AboutPage = () => {
             ))}
           </ul>
         </section>
-
         {/* Skills Section */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-gray-700">
@@ -266,7 +265,6 @@ const AboutPage = () => {
             </div>
           </div>
         </section>
-
         {/* Professional Journey */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-gray-700">
@@ -288,7 +286,6 @@ const AboutPage = () => {
             ))}
           </ul>
         </section>
-
         {/* Value Proposition */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-gray-700">
@@ -325,7 +322,6 @@ const AboutPage = () => {
             ))}
           </div>
         </section>
-
         {/* Hobbies and Interests */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-gray-700">
@@ -366,7 +362,6 @@ const AboutPage = () => {
             </div>
           </div>
         </section>
-
         {/* Call to Action */}
         <section className="mb-16 text-center">
           <h2 className="text-3xl font-bold mb-6">Let's Connect!</h2>
@@ -454,6 +449,16 @@ const AboutPage = () => {
             or just chatting about the latest trends in data analytics, I'd love
             to hear from you!
           </p>
+        </section>
+
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-gray-700">
+            Professional Documents
+          </h2>
+          <p className="text-lg mb-4">
+            Download my complete CV or condensed resume:
+          </p>
+          <DownloadButtons />
         </section>
       </div>
       <Footer />

@@ -34,16 +34,6 @@ const Footer = () => {
               </Link>
             </li>
           </ul>
-          // Add near the end of your about page, before the Footer
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-gray-700">
-              Professional Documents
-            </h2>
-            <p className="text-lg mb-4">
-              Download my complete CV or condensed resume:
-            </p>
-            <DownloadButtons />
-          </section>
         </div>
 
         {/* Social Media */}
@@ -63,6 +53,13 @@ const Footer = () => {
               <FaGithub />
             </Link>
           </div>
+        </div>
+
+        <div>
+          <section className="mb-16">
+            <h2 className="text-lg font-bold">Download File</h2>
+            <DownloadButtons />
+          </section>
         </div>
       </div>
 

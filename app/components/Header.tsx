@@ -42,16 +42,33 @@ const Header = () => {
               About Me
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full"></span>
             </Link>
+            <Link
+              href="#"
+              className="text-gray-700 hover:text-purple-600 font-medium transition-colors relative group"
+            >
+              Contact
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full"></span>
+            </Link>
           </div>
 
           {/* Right Edge CTA Button */}
           <div className="hidden md:block">
-            <Link
-              href="/contact"
-              className="px-5 py-2 bg-gray-900 text-white rounded-full font-medium hover:shadow-lg transition-all hover:from-purple-700 hover:to-pink-600"
-            >
-              Contact Me
-            </Link>
+            <div className="flex space-x-4">
+              <a
+                href="/documents/Faith_Obajafa_CV.pdf"
+                download="Faith_Obajafa_CV.pdf"
+                className="text-white hover:text-blue-300 px-3 py-2 flex items-center"
+              >
+                <span>Download CV</span>
+              </a>
+              <a
+                href="/documents/Faith_Obajafa_Resume.pdf"
+                download="Faith_Obajafa_Resume.pdf"
+                className="text-white hover:text-blue-300 px-3 py-2 flex items-center"
+              >
+                <span>Resume</span>
+              </a>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -103,6 +120,22 @@ const Header = () => {
           >
             Contact Me
           </Link>
+          <div className="flex space-x-4">
+            <a
+              href="/documents/Faith_Obajafa_CV.pdf"
+              download="Faith_Obajafa_CV.pdf"
+              className=" hover:text-blue-300 mt-2 px-4 py-2 text-white rounded-full font-medium text-center"
+            >
+              <span>Download CV</span>
+            </a>
+            <a
+              href="/documents/Faith_Obajafa_Resume.pdf"
+              download="Faith_Obajafa_Resume.pdf"
+              className="hover:text-blue-300 mt-2 px-4 py-2 text-white rounded-full font-medium text-center"
+            >
+              <span>Resume</span>
+            </a>
+          </div>
         </div>
       </div>
     </nav>
