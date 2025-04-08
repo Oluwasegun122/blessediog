@@ -76,65 +76,70 @@ export default function DocumentModal() {
       <Dialog
         open={isOpen}
         onClose={() => setIsOpen(false)}
-        className="relative z-[1000]" // Increased z-index
+        className="relative z-[1000]"
       >
-        {/* Backdrop - now positioned above navbar */}
+        {/* Backdrop */}
         <div
           className="fixed inset-0 bg-black/75 z-[1000]"
           aria-hidden="true"
         />
 
         {/* Full-screen container */}
-        <div className="fixed inset-0 flex items-center justify-center p-4 z-[1001]">
-          {" "}
-          {/* Higher than backdrop */}
-          <Dialog.Panel className="w-full max-w-6xl h-[90vh] bg-white rounded-lg flex flex-col shadow-xl">
-            {/* Modal Header */}
-            <div className="flex justify-between items-center p-4 border-b">
-              <Dialog.Title className="text-xl font-bold">
-                {activeDoc ? documents[activeDoc].title : ""}
-              </Dialog.Title>
-              <div className="flex gap-2">
-                <a
-                  href={activeDoc ? documents[activeDoc].url : "#"}
-                  download={activeDoc ? documents[activeDoc].downloadName : ""}
-                  className="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 text-sm"
-                >
-                  Download
-                </a>
-                <button
-                  onClick={() => setIsOpen(false)}
-                  className="p-1 text-gray-500 hover:text-gray-700"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
+        <div className="fixed inset-0 z-[1001]">
+          {/* Larger modal container with 95% viewport height */}
+          <div className="flex min-h-full items-center justify-center p-4">
+            <Dialog.Panel className="w-full max-w-[95vw] h-[95vh] bg-white rounded-lg flex flex-col shadow-2xl transform transition-all">
+              {/* Modal Header - Slimmer */}
+              <div className="flex justify-between items-center p-3 border-b">
+                <Dialog.Title className="text-xl font-bold truncate max-w-[80%]">
+                  {activeDoc ? documents[activeDoc].title : ""}
+                </Dialog.Title>
+                <div className="flex gap-2">
+                  <a
+                    href={activeDoc ? documents[activeDoc].url : "#"}
+                    download={
+                      activeDoc ? documents[activeDoc].downloadName : ""
+                    }
+                    className="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 text-sm whitespace-nowrap"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                </button>
+                    Download PDF
+                  </a>
+                  <button
+                    onClick={() => setIsOpen(false)}
+                    className="p-1 text-gray-500 hover:text-gray-700"
+                    aria-label="Close"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
               </div>
-            </div>
 
-            {/* PDF Viewer */}
-            <div className="flex-1 overflow-hidden">
-              {activeDoc && (
-                <iframe
-                  src={`${documents[activeDoc].url}#view=fitH`}
-                  className="w-full h-full border-0"
-                  title={documents[activeDoc].title}
-                />
-              )}
-            </div>
-          </Dialog.Panel>
+              {/* PDF Viewer - Maximized space */}
+              <div className="flex-1 overflow-hidden">
+                {activeDoc && (
+                  <iframe
+                    src={`${documents[activeDoc].url}#view=fitH`}
+                    className="w-full h-full border-0"
+                    title={documents[activeDoc].title}
+                    loading="eager"
+                  />
+                )}
+              </div>
+            </Dialog.Panel>
+          </div>
         </div>
       </Dialog>
     </>

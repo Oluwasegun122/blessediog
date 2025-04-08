@@ -293,17 +293,7 @@ const AboutPage = () => {
             </div>
           </div>
         </section>
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-gray-700">
-            Professional Documents
-          </h2>
-          <p className="text-lg mb-4">
-            Download my complete CV or condensed resume:
-          </p>
-          <DownloadButtons />
-        </section>
-        import DocumentModal from "@/components/DocumentModal"; // In your about
-        page component, add this section:
+
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-gray-700">
             Professional Documents

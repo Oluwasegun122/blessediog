@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FaFacebook, FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
-import DownloadButtons from "./DownloadButtons";
+import DocumentModal from "./DocumentModal";
 
 const Footer = () => {
   return (
@@ -54,12 +54,18 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-
         <div>
-          <section className="mb-16">
-            <h2 className="text-lg font-bold">Download File</h2>
-            <DownloadButtons />
-          </section>
+          <div className="flex justify-center md:justify-start space-x-4 text-xl">
+            <section className="mb-16">
+              <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-gray-700">
+                Professional Documents
+              </h2>
+              <p className="text-lg mb-4">
+                View or download my complete CV or condensed resume:
+              </p>
+              <DocumentModal />
+            </section>
+          </div>
         </div>
       </div>
 
