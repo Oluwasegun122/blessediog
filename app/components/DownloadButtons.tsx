@@ -37,7 +37,7 @@ export default function DownloadButtons() {
 
       <button
         onClick={() => handleDownload("Faith_Obajafa_Resume.pdf")}
-        className="px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors flex items-center"
+        className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 transition-colors flex items-center"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

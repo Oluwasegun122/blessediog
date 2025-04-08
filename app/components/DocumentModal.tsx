@@ -100,16 +100,30 @@ export default function DocumentModal({
               </div>
             </>
           ) : (
-            <div className="flex-col gap-y-2 hidden md:block">
+            <div className="flex flex-col gap-y-2 hidden md:block">
               <div>
                 <button
                   onClick={() => {
                     setActiveDoc("cv");
                     setIsOpen(true);
                   }}
-                  className={getButtonClass()}
+                  className={`${getButtonClass()} w-full text-left justify-between`}
                 >
-                  {`${buttonText} CV`}
+                  <span>View CV</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 ml-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    />
+                  </svg>
                 </button>
               </div>
               <div>
@@ -118,9 +132,23 @@ export default function DocumentModal({
                     setActiveDoc("resume");
                     setIsOpen(true);
                   }}
-                  className={getButtonClass()}
+                  className={`${getButtonClass()} w-full text-left justify-between`}
                 >
-                  {`${buttonText} Resume`}
+                  <span>View Resume</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 ml-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    />
+                  </svg>
                 </button>
               </div>
             </div>
