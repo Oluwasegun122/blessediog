@@ -76,14 +76,19 @@ export default function DocumentModal() {
       <Dialog
         open={isOpen}
         onClose={() => setIsOpen(false)}
-        className="relative z-50"
+        className="relative z-[1000]" // Increased z-index
       >
-        {/* Backdrop */}
-        <div className="fixed inset-0 bg-black/75" aria-hidden="true" />
+        {/* Backdrop - now positioned above navbar */}
+        <div
+          className="fixed inset-0 bg-black/75 z-[1000]"
+          aria-hidden="true"
+        />
 
         {/* Full-screen container */}
-        <div className="fixed inset-0 flex items-center justify-center p-4">
-          <Dialog.Panel className="w-full max-w-6xl h-[90vh] bg-white rounded-lg flex flex-col">
+        <div className="fixed inset-0 flex items-center justify-center p-4 z-[1001]">
+          {" "}
+          {/* Higher than backdrop */}
+          <Dialog.Panel className="w-full max-w-6xl h-[90vh] bg-white rounded-lg flex flex-col shadow-xl">
             {/* Modal Header */}
             <div className="flex justify-between items-center p-4 border-b">
               <Dialog.Title className="text-xl font-bold">
