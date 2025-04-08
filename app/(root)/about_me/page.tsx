@@ -5,6 +5,7 @@ import Image from "next/image";
 import Loading from "@/app/components/Loading";
 import Footer from "@/app/components/Footer";
 import DownloadButtons from "@/app/components/DownloadButtons";
+import DocumentModal from "@/app/components/DocumentModal";
 
 interface AboutData {
   name: string;
@@ -96,7 +97,6 @@ const AboutPage = () => {
             </div>
           </div>
         </section>
-
         {/* Specialization Section */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-gray-700">
@@ -110,7 +110,6 @@ const AboutPage = () => {
             ))}
           </ul>
         </section>
-
         {/* Skills Section */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-gray-700">
@@ -197,7 +196,6 @@ const AboutPage = () => {
             </div>
           </div>
         </section>
-
         {/* Professional Journey */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-gray-700">
@@ -219,7 +217,6 @@ const AboutPage = () => {
             ))}
           </ul>
         </section>
-
         {/* Value Proposition */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-gray-700">
@@ -256,7 +253,6 @@ const AboutPage = () => {
             ))}
           </div>
         </section>
-
         {/* Hobbies and Interests */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-gray-700">
@@ -297,7 +293,6 @@ const AboutPage = () => {
             </div>
           </div>
         </section>
-
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-gray-700">
             Professional Documents
@@ -307,7 +302,17 @@ const AboutPage = () => {
           </p>
           <DownloadButtons />
         </section>
-
+        import DocumentModal from "@/components/DocumentModal"; // In your about
+        page component, add this section:
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-gray-700">
+            Professional Documents
+          </h2>
+          <p className="text-lg mb-4">
+            View or download my complete CV or condensed resume:
+          </p>
+          <DocumentModal />
+        </section>
         {/* Call to Action */}
         <section className="mb-16 text-center">
           <h2 className="text-3xl font-bold mb-6">Let's Connect!</h2>
