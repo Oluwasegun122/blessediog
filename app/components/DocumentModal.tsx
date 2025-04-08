@@ -56,7 +56,7 @@ export default function DocumentModal({
           {triggerType === "dropdown" ? (
             <>
               <button
-                className={`${getButtonClass()} bg-gray-800 text-white rounded-lg hover:bg-gray-700 rounded-full`}
+                className={`${getButtonClass()} bg-gray-800 text-white p-2 hover:bg-gray-700 rounded-full`}
               >
                 {buttonText}
                 <svg
@@ -100,7 +100,7 @@ export default function DocumentModal({
               </div>
             </>
           ) : (
-            <div className="flex-col hidden md:block">
+            <div className="flex-col gap-y-2 hidden md:block">
               <div>
                 <button
                   onClick={() => {
