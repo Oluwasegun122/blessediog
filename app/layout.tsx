@@ -29,7 +29,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-200`}
       >
         <Header />
-        <div className=" top-0">{children}</div>
+        <div className=" top-0 scroll-m-0">{children}</div>
       </body>
     </html>
   );

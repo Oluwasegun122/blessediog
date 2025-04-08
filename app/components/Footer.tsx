@@ -5,7 +5,7 @@ import DocumentModal from "./DocumentModal";
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-6 mt-10">
-      <div className="max-w-6xl mx-auto text-center md:text-left grid md:grid-cols-3 gap-6">
+      <div className="max-w-6xl mx-auto text-center md:text-left grid md:grid-cols-4 gap-6">
         {/* Contact Section */}
         <div>
           <h2 className="text-lg font-bold">Contact Me</h2>

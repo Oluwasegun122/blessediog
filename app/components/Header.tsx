@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { FaBars, FaTimes } from "react-icons/fa";
+import DocumentModal from "./DocumentModal";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,20 +55,7 @@ const Header = () => {
           {/* Right Edge CTA Button */}
           <div className="hidden md:block">
             <div className="flex space-x-4">
-              <a
-                href="/documents/Faith_Obajafa_CV.pdf"
-                download="Faith_Obajafa_CV.pdf"
-                className="text-white bg-gray-700 rounded-full hover:text-purple-600 px-3 py-2 flex items-center"
-              >
-                <span>Download CV</span>
-              </a>
-              <a
-                href="/documents/Faith_Obajafa_Resume.pdf"
-                download="Faith_Obajafa_Resume.pdf"
-                className="text-white bg-gray-700 rounded-full hover:text-purple-600 px-3 py-2 flex items-center"
-              >
-                <span>Resume</span>
-              </a>
+              <DocumentModal triggerStyle="link" buttonText="My Documents" />
             </div>
           </div>
 
