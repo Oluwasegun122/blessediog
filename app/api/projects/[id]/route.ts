@@ -10,63 +10,81 @@ export async function GET(
   const mockProjects = [
     {
       id: "1",
-      title: "Sample Project",
+      title: "Sales Performance Dashboard",
       image: "/images/pro_img1.jpg",
-      description: "This is a sample project description.",
-      contents: "Detailed content about the project...",
-      slug: "sample-project",
-      tags: ["React", "Next.js"],
-      date: "2023-01-15",
-      githubUrl: "https://github.com/example",
-      liveUrl: "https://example.com",
-    },
-    {
-      id: "8",
-      title: "Sample Project",
-      image: "/images/pro_img1.jpg",
-      description: "This is a sample project description.",
-      contents: "Detailed content about the project...",
-      slug: "sample-project",
-      tags: ["React", "Next.js"],
-      date: "2023-01-15",
-      githubUrl: "https://github.com/example",
-      liveUrl: "https://example.com",
+      description:
+        "Interactive dashboard analyzing sales trends across multiple regions and product categories.",
+      contents: `Developed a comprehensive sales performance dashboard that:
+- Aggregated data from 5+ sources into a unified data model
+- Identified underperforming regions with 25% accuracy improvement
+- Enabled real-time decision making for sales teams
+- Reduced reporting time by 60%`,
+      slug: "sales-performance-dashboard",
+      tags: ["Power BI", "SQL", "Data Modeling"],
+      date: "2023-03-15",
+      githubUrl: "https://github.com/BLESSEDIOG/sales-dashboard",
     },
     {
       id: "2",
-      title: "Portfolio Website",
+      title: "Customer Churn Prediction Model",
       image: "/images/pro_img1.jpg",
       description:
-        "A responsive personal portfolio showcasing skills and projects with dark mode support.",
-      slug: "portfolio-website",
-      tags: ["Next.js", "Tailwind CSS", "TypeScript"],
-      date: "2023-07-22",
-      githubUrl: "https://github.com/yourusername/portfolio",
-      liveUrl: "https://yourportfolio.example.com",
+        "Machine learning model predicting customer churn with 85% accuracy for a telecom company.",
+      contents: `Built and deployed a predictive model that:
+- Processed 2M+ customer records
+- Identified key churn indicators (top 3: service outages, billing issues, competitor offers)
+- Achieved 85% prediction accuracy
+- Reduced churn by 12% through targeted interventions`,
+      slug: "churn-prediction-model",
+      tags: ["Python", "scikit-learn", "Pandas", "Jupyter"],
+      date: "2023-06-22",
+      githubUrl: "https://github.com/BLESSEDIOG/churn-prediction",
     },
     {
       id: "3",
-      title: "School Management Portal",
-      image: "/images/pro_img2.jpeg",
+      title: "Educational Data Analysis Platform",
+      image: "/images/pro_img1.jpg",
       description:
-        "Comprehensive system for student records, payments, and academic tracking.",
-      slug: "school-portal",
-      tags: ["React", "Firebase", "Material UI"],
+        "Data platform analyzing student performance and institutional effectiveness for a school district.",
+      contents: `Created an analytics solution that:
+- Processed 5 years of student records
+- Identified achievement gaps between demographic groups
+- Provided teacher effectiveness insights
+- Helped allocate $2M in resources more effectively`,
+      slug: "education-data-platform",
+      tags: ["Tableau", "SQL Server", "ETL", "Data Visualization"],
       date: "2023-09-10",
-      githubUrl: "https://github.com/yourusername/school-portal",
-      liveUrl: "https://school-portal.example.com",
+      liveUrl: "https://education-demo.example.com",
     },
     {
       id: "4",
-      title: "Data Analytics Portfolio",
+      title: "Aircraft Maintenance Optimization",
       image: "/images/pro_img1.jpg",
       description:
-        "Interactive portfolio showcasing data analysis projects and visualizations.",
-      slug: "data-analytics-portfolio",
-      tags: ["Python", "Pandas", "Tableau", "Jupyter"],
+        "Predictive maintenance system reducing aircraft downtime by 18% for an aerospace client.",
+      contents: `Developed maintenance algorithms that:
+- Analyzed sensor data from 150+ aircraft
+- Predicted part failures with 92% accuracy
+- Reduced unscheduled maintenance by 18%
+- Saved $4.2M annually in operational costs`,
+      slug: "aircraft-maintenance-optimization",
+      tags: ["Python", "Azure ML", "Time Series Analysis", "Power BI"],
       date: "2023-11-05",
-      githubUrl: "https://github.com/yourusername/data-portfolio",
-      liveUrl: "https://data-portfolio.example.com",
+    },
+    {
+      id: "5",
+      title: "Gaming Industry Player Behavior Analysis",
+      image: "/images/pro_img1.jpg",
+      description:
+        "Behavioral segmentation model identifying high-value player patterns for a gaming company.",
+      contents: `Conducted analysis that:
+- Segmented 1M+ players into 6 behavioral clusters
+- Identified monetization opportunities increasing revenue by 22%
+- Reduced player churn through personalized engagement
+- Optimized game design based on usage patterns`,
+      slug: "gaming-player-analysis",
+      tags: ["R", "Cluster Analysis", "BigQuery", "Data Storytelling"],
+      date: "2024-01-18",
     },
   ];
 
