@@ -55,11 +55,11 @@ export default function DocumentModal({
         >
           {triggerType === "dropdown" ? (
             <>
-              <button className={getButtonClass()}>
+              <button className={`${getButtonClass()} bg-gradient-to-r from-blue-600 to-purple-600`}>
                 {buttonText}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 ml-1 inline"
+                  className="h-4 w-4 ml-1 mt-4 inline"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -98,7 +98,7 @@ export default function DocumentModal({
               </div>
             </>
           ) : (
-            <div className="flex-col gap-2 hidden md:block">
+            <div className="flex-col space-x-2 hidden md:block">
               <div>
                 <button
                   onClick={() => {
@@ -107,7 +107,7 @@ export default function DocumentModal({
                   }}
                   className={getButtonClass()}
                 >
-                  {`${buttonText} cv`}
+                  {`${buttonText} CV`}
                 </button>
               </div>
               <div>
