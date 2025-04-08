@@ -4,6 +4,7 @@ import ProjectsSection from "./components/ProjectsSection";
 import CertificationsSection from "./components/CertificationsSection";
 import Footer from "./components/Footer";
 import Link from "next/link";
+import DocumentModal from "./components/DocumentModal";
 
 export default function Home() {
   return (
@@ -47,6 +48,12 @@ export default function Home() {
             >
               About Me
             </Link>
+            <DocumentModal
+              triggerType="button"
+              buttonStyle="primary"
+              placement="hero"
+              buttonText="View My CV"
+            />
           </div>
         </div>
       </div>

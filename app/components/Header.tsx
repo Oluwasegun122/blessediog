@@ -55,7 +55,12 @@ const Header = () => {
           {/* Right Edge CTA Button */}
           <div className="hidden md:block">
             <div className="flex space-x-4">
-              <DocumentModal triggerStyle="link" buttonText="My Documents" />
+              <DocumentModal
+                triggerType="dropdown"
+                placement="navbar"
+                buttonStyle="text"
+                buttonText="Documents"
+              />
             </div>
           </div>
 

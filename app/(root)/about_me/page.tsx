@@ -301,7 +301,12 @@ const AboutPage = () => {
           <p className="text-lg mb-4">
             View or download my complete CV or condensed resume:
           </p>
-          <DocumentModal />
+          <DocumentModal
+            triggerType="button"
+            placement="about"
+            buttonStyle="secondary"
+            buttonText="View My Resume"
+          />
         </section>
         {/* Call to Action */}
         <section className="mb-16 text-center">

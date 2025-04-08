@@ -3,20 +3,21 @@
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 
-export default function DocumentModal({
-  triggerStyle = "button", // 'button' or 'link'
-  buttonText = "View Documents", // Custom button text
-}: {
-  triggerStyle?: "button" | "link";
+type DocumentModalProps = {
+  triggerType?: "button" | "link" | "dropdown" | "none";
+  buttonStyle?: "primary" | "secondary" | "text";
   buttonText?: string;
-}) {
+  placement?: "navbar" | "footer" | "hero" | "about";
+};
+
+export default function DocumentModal({
+  triggerType = "button",
+  buttonStyle = "primary",
+  buttonText = "View Documents",
+  placement = "about",
+}: DocumentModalProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDoc, setActiveDoc] = useState<"cv" | "resume" | null>(null);
-
-  const openModal = (docType: "cv" | "resume") => {
-    setActiveDoc(docType);
-    setIsOpen(true);
-  };
 
   const documents = {
     cv: {
@@ -31,70 +32,129 @@ export default function DocumentModal({
     },
   };
 
+  // Styling based on placement and type
+  const getButtonClass = () => {
+    if (buttonStyle === "secondary") {
+      return "px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700";
+    }
+    if (buttonStyle === "text") {
+      return "text-current hover:text-blue-600";
+    }
+    // Default primary
+    return "px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700";
+  };
+
   return (
     <>
-      {/* Navbar Trigger - Simple Link Version */}
-      {triggerStyle === "link" ? (
-        <div className="relative group">
-          <button
-            onClick={() => openModal("cv")}
-            className="text-white hover:text-blue-300 px-3 py-2"
-          >
-            {buttonText}
-          </button>
-
-          {/* Optional dropdown for direct access */}
-          <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 hidden group-hover:block">
+      {/* Conditional Trigger Rendering */}
+      {triggerType !== "none" && (
+        <div
+          className={`inline-flex ${
+            placement === "navbar" ? "relative group" : ""
+          }`}
+        >
+          {triggerType === "dropdown" ? (
+            <>
+              <button className={getButtonClass()}>
+                {buttonText}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4 ml-1 inline"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                className={`absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 ${
+                  placement === "navbar" ? "hidden group-hover:block" : ""
+                }`}
+              >
+                <button
+                  onClick={() => {
+                    setActiveDoc("cv");
+                    setIsOpen(true);
+                  }}
+                  className="block px-4 py-2 text-gray-800 hover:bg-blue-100 w-full text-left"
+                >
+                  View CV
+                </button>
+                <button
+                  onClick={() => {
+                    setActiveDoc("resume");
+                    setIsOpen(true);
+                  }}
+                  className="block px-4 py-2 text-gray-800 hover:bg-blue-100 w-full text-left"
+                >
+                  View Resume
+                </button>
+              </div>
+            </>
+          ) : (
             <button
-              onClick={() => openModal("cv")}
-              className="block px-4 py-2 text-gray-800 hover:bg-blue-100 w-full text-left"
+              onClick={() => {
+                setActiveDoc("cv");
+                setIsOpen(true);
+              }}
+              className={getButtonClass()}
             >
-              View CV
+              {buttonText}
             </button>
-            <button
-              onClick={() => openModal("resume")}
-              className="block px-4 py-2 text-gray-800 hover:bg-blue-100 w-full text-left"
-            >
-              View Resume
-            </button>
-          </div>
-        </div>
-      ) : (
-        /* Original Button Triggers */
-        <div className="flex flex-wrap gap-4 mt-8">
-          <button
-            onClick={() => openModal("cv")}
-            className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center"
-          >
-            View CV
-          </button>
-          <button
-            onClick={() => openModal("resume")}
-            className="px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors flex items-center"
-          >
-            View Resume
-          </button>
+          )}
         </div>
       )}
 
-      {/* Modal (same as before) */}
+      {/* Modal (Reusable across all placements) */}
       <Dialog
         open={isOpen}
         onClose={() => setIsOpen(false)}
         className="relative z-[1000]"
       >
-        {/* Backdrop */}
         <div
           className="fixed inset-0 bg-black/75 z-[1000]"
           aria-hidden="true"
         />
-
-        {/* Full-screen container */}
         <div className="fixed inset-0 z-[1001]">
           <div className="flex min-h-full items-center justify-center p-4">
             <Dialog.Panel className="w-full max-w-[95vw] h-[95vh] bg-white rounded-lg flex flex-col shadow-2xl">
-              {/* Modal content remains the same */}
-              {/* ... */}
+              <div className="flex justify-between items-center p-3 border-b">
+                <Dialog.Title className="text-xl font-bold">
+                  {activeDoc ? documents[activeDoc].title : ""}
+                </Dialog.Title>
+                <div className="flex gap-2">
+                  <a
+                    href={activeDoc ? documents[activeDoc].url : "#"}
+                    download={
+                      activeDoc ? documents[activeDoc].downloadName : ""
+                    }
+                    className="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 text-sm"
+                  >
+                    Download
+                  </a>
+                  <button
+                    onClick={() => setIsOpen(false)}
+                    className="p-1 text-gray-500 hover:text-gray-700"
+                  >
+                    ✕
+                  </button>
+                </div>
+              </div>
+              <div className="flex-1 overflow-hidden">
+                {activeDoc && (
+                  <iframe
+                    src={`${documents[activeDoc].url}#view=fitH`}
+                    className="w-full h-full border-0"
+                    title={documents[activeDoc].title}
+                  />
+                )}
+              </div>
             </Dialog.Panel>
           </div>
         </div>
