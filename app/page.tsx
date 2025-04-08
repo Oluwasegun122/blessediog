@@ -45,7 +45,7 @@ export default function Home() {
             <div className=" pb-2.5">
               <Link
                 href="/about_me"
-                className="px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-blue-500/20"
+                className="px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-blue-500/20"
               >
                 About Me
               </Link>
