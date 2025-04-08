@@ -60,7 +60,7 @@ const Footer = () => {
             <DocumentModal
               triggerType="link"
               placement="footer"
-              buttonText="Download CV"
+              buttonText="View"
             />
           </div>
         </div>

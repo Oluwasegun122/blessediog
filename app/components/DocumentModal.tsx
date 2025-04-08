@@ -107,7 +107,7 @@ export default function DocumentModal({
                   }}
                   className={getButtonClass()}
                 >
-                  {buttonText}
+                  {`${buttonText} cv`}
                 </button>
               </div>
               <div>
@@ -118,7 +118,7 @@ export default function DocumentModal({
                   }}
                   className={getButtonClass()}
                 >
-                  {buttonText}
+                  {`${buttonText} resume`}
                 </button>
               </div>
             </div>
