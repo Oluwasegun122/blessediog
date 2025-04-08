@@ -40,104 +40,34 @@ interface AboutData {
 const AboutPage = () => {
   const [data, setData] = useState<AboutData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Simulating API call with your provided data
-    const fetchData = () => {
-      const aboutData: AboutData = {
-        name: "Faith Obajafa",
-        bio: "A detail-driven data analyst with a passion for uncovering trends and insights hidden in data. Over the past five years, I've honed my ability to transform complex datasets into actionable strategies that drive growth and innovation.",
-        specializations: [
-          "Extracting actionable insights from complex data sets",
-          "Creating impactful data visualizations to tell compelling stories",
-          "Applying statistical analysis and process improvement techniques",
-        ],
-        technicalSkills: [
-          {
-            category: "Programming Languages",
-            items: ["Python", "R", "SQL"],
-          },
-          {
-            category: "Data Analysis Tools",
-            items: ["Excel", "Tableau", "Power BI"],
-          },
-          {
-            category: "Database Management",
-            items: ["MySQL", "SQL Server"],
-          },
-          {
-            category: "Cloud Platforms",
-            items: ["Microsoft Azure"],
-          },
-          {
-            category: "Operating Systems",
-            items: ["Windows", "Linux"],
-          },
-        ],
-        analyticalSkills: [
-          "Data cleaning and preprocessing",
-          "Statistical analysis and modeling",
-          "Trend forecasting and predictive analytics",
-          "Data visualization and storytelling",
-        ],
-        softSkills: [
-          "Problem-solving and critical thinking",
-          "Effective communication and presentation",
-          "Collaboration and teamwork",
-          "Time management and adaptability",
-          "Strong attention to detail",
-        ],
-        professionalJourney: {
-          description:
-            "I discovered my passion for data during my Statistics studies, where I delved into mathematical concepts and real-world applications. This passion led me to explore tools for data analysis and visualization, setting the foundation for my journey as a data analyst.",
-          highlights: [
-            "Worked on projects in Sales, Tech, Aerospace, Gambling, and Education industries, providing data-driven recommendations that influenced strategic decisions",
-            "Collaborated with cross-functional teams to create and implement dynamic data visualizations, enhancing stakeholder engagement",
-            "Designed and maintained databases, ensuring data integrity and quality",
-          ],
-        },
-        valueProposition: {
-          description:
-            "As a meticulous data analyst, I bring together technical expertise, business insights, and creative problem-solving skills. This unique blend allows me to uncover hidden opportunities and deliver strategies that empower teams to make informed, data-driven decisions.",
-          outcomes: [
-            "Improved operational efficiency",
-            "Enhanced customer experiences",
-            "Informed strategic planning",
-            "Revenue growth through data-driven decisions",
-          ],
-        },
-        hobbies: {
-          professional: [
-            "Participating in data science competitions on Kaggle and DatAfrika to refine skills and learn new techniques",
-            "Exploring libraries and frameworks like pandas, matplotlib, and scikit-learn",
-            "Reading about AI, machine learning, and data visualization innovations",
-          ],
-          personal: [
-            "Camping to reconnect with nature and recharge",
-            "Reading science fiction and historical non-fiction books to broaden perspectives",
-            "Traveling to experience different cultures and cuisines",
-            "Cooking and experimenting with new recipes",
-          ],
-        },
-        contact: {
-          email: "faithobajafa@gmail.com",
-          linkedin: "linkedin.com/in/faith-obajafa",
-          github: "github.com/BLESSEDIOG",
-          twitter: "x.com/FaithObajafa",
-        },
-      };
-      setData(aboutData);
-      setLoading(false);
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/api/about");
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        setData(data);
+      } catch (err) {
+        setError(
+          err instanceof Error ? err.message : "An unknown error occurred"
+        );
+        console.error("Error fetching about data:", err);
+      } finally {
+        setLoading(false);
+      }
     };
 
     fetchData();
   }, []);
 
   if (loading) return <Loading />;
+  if (error) return <p className="text-center py-10 text-red-500">{error}</p>;
   if (!data)
-    return (
-      <p className="text-center py-10 text-red-500">Failed to load data.</p>
-    );
+    return <p className="text-center py-10 text-red-500">No data available.</p>;
 
   return (
     <>
@@ -166,6 +96,7 @@ const AboutPage = () => {
             </div>
           </div>
         </section>
+
         {/* Specialization Section */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-gray-700">
@@ -179,15 +110,16 @@ const AboutPage = () => {
             ))}
           </ul>
         </section>
+
         {/* Skills Section */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-gray-700">
             Skills and Expertise
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Technical Skills */}
-            <div className="text-gray-200">
+            <div>
               <h3 className="text-xl font-semibold mb-4 text-primary">
                 Technical Skills
               </h3>
@@ -265,6 +197,7 @@ const AboutPage = () => {
             </div>
           </div>
         </section>
+
         {/* Professional Journey */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-gray-700">
@@ -286,6 +219,7 @@ const AboutPage = () => {
             ))}
           </ul>
         </section>
+
         {/* Value Proposition */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-gray-700">
@@ -322,6 +256,7 @@ const AboutPage = () => {
             ))}
           </div>
         </section>
+
         {/* Hobbies and Interests */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-gray-700">
@@ -361,16 +296,18 @@ const AboutPage = () => {
               </ul>
             </div>
           </div>
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-gray-700">
-              Professional Documents
-            </h2>
-            <p className="text-lg mb-4">
-              Download my complete CV or condensed resume:
-            </p>
-            <DownloadButtons />
-          </section>
         </section>
+
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-gray-700">
+            Professional Documents
+          </h2>
+          <p className="text-lg mb-4">
+            Download my complete CV or condensed resume:
+          </p>
+          <DownloadButtons />
+        </section>
+
         {/* Call to Action */}
         <section className="mb-16 text-center">
           <h2 className="text-3xl font-bold mb-6">Let's Connect!</h2>
