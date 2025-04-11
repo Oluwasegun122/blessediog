@@ -50,7 +50,7 @@ export default function Home() {
                 About Me
               </Link>
             </div>
-            <div>
+            <div className="hidden">
               <DocumentModal
                 triggerType="button"
                 buttonStyle="primary"

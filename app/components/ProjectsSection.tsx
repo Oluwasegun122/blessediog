@@ -56,7 +56,7 @@ export default function ProjectsSection() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-            <span className="block">Featured Projects</span>
+            <span className="block capitalize">Featured Projects</span>
             <span className="block mt-2 h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></span>
           </h2>
           <p className="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">
