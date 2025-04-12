@@ -32,13 +32,19 @@ export default function ProjectDetail({ projectId }: { projectId: string }) {
       .finally(() => setLoading(false));
   }, [projectId, router]);
 
-  if (loading) return <Loading />;
+  if (loading) return <Loading loading_value="Project" />;
   if (!project) return <p>Project not found</p>;
 
   return (
     <div className="pt-20 px-5">
       <h1 className="text-4xl font-bold">{project.title}</h1>
-      <Image src={project.image} alt={project.title} width={600} height={400} className="w-full h-auto" />
+      <Image
+        src={project.image}
+        alt={project.title}
+        width={600}
+        height={400}
+        className="w-full h-auto"
+      />
       <p className="text-lg">{project.contents}</p>
     </div>
   );
