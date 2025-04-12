@@ -65,7 +65,7 @@ const AboutPage = () => {
     fetchData();
   }, []);
 
-  if (loading) return <Loading />;
+  if (loading) return <Loading loading_value="About Me" />;
   if (error) return <p className="text-center py-10 text-red-500">{error}</p>;
   if (!data)
     return <p className="text-center py-10 text-red-500">No data available.</p>;

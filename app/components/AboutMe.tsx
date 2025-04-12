@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function AboutMe() {
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-2xl shadow-xl w-full max-w-4xl mx-auto border border-gray-100">
+    <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-2xl mb-2 shadow-xl w-full max-w-4xl mx-auto border border-gray-100">
       <div className="flex flex-col md:flex-row gap-8 items-center">
         {/* Image Section */}
         <div className="relative group">

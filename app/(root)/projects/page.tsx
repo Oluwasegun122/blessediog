@@ -54,7 +54,7 @@ export default function ProjectsPage() {
 
           {/* Projects Grid */}
           {loading ? (
-            <Loading />
+            <Loading loading_value="Projects" />
           ) : (
             <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               {projects.map((project) => (
@@ -136,7 +136,9 @@ export default function ProjectsPage() {
               <h3 className="text-xl font-medium text-gray-500">
                 No projects found
               </h3>
-              <p className="mt-2 text-gray-400">Check back later for updates</p>
+              <p className="mt-2 text-gray-400">
+                Please check you internet connection and reload the page
+              </p>
             </div>
           )}
         </div>

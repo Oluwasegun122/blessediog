@@ -1,8 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
 
-export default function Loading() {
-  const [loadingText, setLoadingText] = useState("Loading your dashboard");
+type loading_values = {
+  loading_value: string;
+};
+
+export default function Loading({ loading_value }: { loading_value: string }) {
+  const [loadingText, setLoadingText] = useState(`Loading ${loading_value}`);
 
   useEffect(() => {
     // Cycle through different loading messages

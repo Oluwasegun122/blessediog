@@ -33,6 +33,11 @@ const Footer = () => {
                 About Me
               </Link>
             </li>
+            <li>
+              <Link href="/contact" className="hover:text-gray-300">
+                Contact Me
+              </Link>
+            </li>
           </ul>
         </div>
 

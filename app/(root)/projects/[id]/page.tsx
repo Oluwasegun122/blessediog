@@ -66,7 +66,7 @@ export default function ProjectPage() {
     return <ErrorBoundary error={error} reset={fetchProject} />;
   }
 
-  if (loading) return <Loading />;
+  if (loading) return <Loading loading_value={project?.title || ""} />;
 
   if (!project) {
     return (
@@ -109,7 +109,7 @@ export default function ProjectPage() {
           </div>
 
           {/* Project Image with error handling */}
-          <div className="relative w-full h-64 md:h-[600px] rounded-xl overflow-hidden shadow-xl mb-12">
+          <div className="relative w-full h-64 md:h-[500px] lg:h-[600px] rounded-xl overflow-hidden shadow-xl mb-12">
             <Image
               src={project.image}
               alt={project.title}
