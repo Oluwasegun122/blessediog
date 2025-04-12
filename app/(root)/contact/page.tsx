@@ -65,7 +65,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12">
+    <div className="max-w-6xl mx-auto px-4 py-12 mt-16">
       {/* Contact Information */}
       <div className="bg-white p-8 rounded-xl shadow-lg">
         <h2 className="text-2xl font-semibold mb-6 text-gray-800">
