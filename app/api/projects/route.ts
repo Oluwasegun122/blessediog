@@ -48,7 +48,7 @@ const projects = [
   {
     id: "5",
     title: "Bike Sales Analysis Dashboard",
-    image: "/images/bike_sales_dashboard.jpg",
+    image: "/images/bike_sales_dashboard.png",
     description:
       "Power BI dashboard analyzing $95M in bike sales to identify profitable products and customer segments.",
     slug: "bike-sales-dashboard",

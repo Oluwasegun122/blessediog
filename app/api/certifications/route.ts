@@ -123,7 +123,7 @@ const certifications = [
     title: "Introduction to Business and Data Analysis",
     issuer: "MTF Institute of Management, Technology and Finance (via Udemy)",
     date: "April 12, 2025",
-    image: "/images/f9a13753-0f65-4db2-878c-1ee8d78ca9ac.jpg.jpg", // You'll need to add this image
+    image: "/images/DATA MANAGEMENT FAITH OBAJAFA (3).jpg", // You'll need to add this image
     fileType: "image",
     credentialId: "UT-BDA-2025-116",
     description: `
@@ -150,7 +150,7 @@ const certifications = [
     title: "Data Quality, Data Management & Data Governance Certificate",
     issuer: "MTF Institute of Management, Technology and Finance (via Udemy)",
     date: "April 12, 2025",
-    image: "/images/DATA MANAGEMENT FAITH OBAJAFA (3).jpg", // Update with your actual image path
+    image: "/images/f9a13753-0f65-4db2-878c-1ee8d78ca9ac.jpg", // Update with your actual image path
     fileType: "image",
     credentialId: "UT-DMQ-2025-109",
     description: `
