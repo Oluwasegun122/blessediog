@@ -80,7 +80,8 @@ export async function GET() {
     },
     contact: {
       email: "faithobajafa@gmail.com",
-      linkedin: "https://linkedin.com/in/faith-obajafa",
+      linkedin:
+        "https://www.linkedin.com/in/faith-obajafa-339925232?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       github: "github.com/BLESSEDIOG",
       twitter: "x.com/FaithObajafa",
     },

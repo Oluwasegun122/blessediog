@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Faith Obajefa Daola Portfoilio",
-  description: "Created By Vis'Tech",
+  title: "Obajafa Dasola Portfoilio",
+  description:
+    "Faith Obajafa | Data Solutions Portfolio. Featured projects: [Bank Churn Prediction (85% accuracy)], [AI HR Performance Dashboard], [Data Governance Framework]. Certified: Power BI, AWS Cloud, Generative AI. Transforming raw data into strategic decisions.",
 };
 
 export default function RootLayout({
