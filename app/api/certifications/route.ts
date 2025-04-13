@@ -220,7 +220,7 @@ const certifications = [
     title: "Performance Management with Generative AI for HR & Managers",
     issuer: "Mike Pritula (via Udemy)",
     date: "April 12, 2025",
-    image: "/images/DATA MANAGEMENT FAITH OBAJAFA (3)",
+    image: "/images/performance_management_ai_certificate.jpg",
     fileType: "image",
     credentialId: "UT-PMAI-2025-0421",
     description: `

@@ -67,7 +67,7 @@ export default function ContactPage() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-12">
-      <div className="text-center mb-12">
+      <div className="text-center mb-12 mt-16">
         <h1 className="text-4xl font-bold text-gray-800 mb-4">Get In Touch</h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
           Have a project in mind or want to discuss opportunities? Reach out

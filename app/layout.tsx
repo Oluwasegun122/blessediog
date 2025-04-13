@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Obajafa Dasola Portfoilio",
+  title: "Faith Dasola Obajafa Portfoilio",
   description:
     "Faith Obajafa | Data Solutions Portfolio. Featured projects: [Bank Churn Prediction (85% accuracy)], [AI HR Performance Dashboard], [Data Governance Framework]. Certified: Power BI, AWS Cloud, Generative AI. Transforming raw data into strategic decisions.",
 };
