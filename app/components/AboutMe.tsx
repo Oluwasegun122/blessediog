@@ -32,10 +32,9 @@ export default function AboutMe() {
 
           <div className="space-y-4">
             <p className="text-gray-700 text-lg leading-relaxed">
-              With 5+ years of experience transforming complex datasets into
-              strategic insights, I specialize in predictive analytics, data
-              visualization, and machine learning applications for business
-              growth.
+              Experience transforming complex datasets into strategic insights,
+              I specialize in predictive analytics, data visualization, and
+              machine learning applications for business growth.
             </p>
 
             <div className="flex flex-wrap justify-center md:justify-start gap-2">

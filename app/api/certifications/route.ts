@@ -49,7 +49,7 @@ const certifications = [
   },
 
   {
-    id: 4,
+    id: 3,
     title: "Human Resource Management Certification",
     issuer: "LA PLAGE META VERSE",
     date: "April 2025",
@@ -88,7 +88,7 @@ const certifications = [
           workforce planning.`,
   },
   {
-    id: 6,
+    id: 4,
     title: "Emotional Intelligence Certification",
     issuer: "Grovo",
     date: "January 6, 2025",
@@ -119,11 +119,11 @@ const certifications = [
         to any organization.`,
   },
   {
-    id: 7,
+    id: 5,
     title: "Introduction to Business and Data Analysis",
     issuer: "MTF Institute of Management, Technology and Finance (via Udemy)",
     date: "April 12, 2025",
-    image: "/images/06f604d4-f746-4a16-a2ec-6deeb34eba41.jpg", // You'll need to add this image
+    image: "/images/f9a13753-0f65-4db2-878c-1ee8d78ca9ac.jpg.jpg", // You'll need to add this image
     fileType: "image",
     credentialId: "UT-BDA-2025-116",
     description: `
@@ -146,7 +146,7 @@ const certifications = [
           strategies.`,
   },
   {
-    id: 8,
+    id: 6,
     title: "Data Quality, Data Management & Data Governance Certificate",
     issuer: "MTF Institute of Management, Technology and Finance (via Udemy)",
     date: "April 12, 2025",
@@ -174,7 +174,7 @@ const certifications = [
           systematic governance approaches.`,
   },
   {
-    id: 9,
+    id: 7,
     title: "Basic Financial Education Certification",
     issuer: "Kudimata",
     date: "December 13, 2024",
@@ -216,7 +216,7 @@ const certifications = [
           financial landscapes with confidence.`,
   },
   {
-    id: 10,
+    id: 8,
     title: "Performance Management with Generative AI for HR & Managers",
     issuer: "Mike Pritula (via Udemy)",
     date: "April 12, 2025",
