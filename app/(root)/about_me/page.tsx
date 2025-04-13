@@ -72,7 +72,7 @@ const AboutPage = () => {
 
   return (
     <>
-      <div className="max-w-6xl mx-auto px-5 py-10 mt-10">
+      <div className="max-w-6xl mx-auto px-5 py-10 pt-20">
         {/* Introduction Section */}
         <section className="mb-16">
           <div className="flex flex-col md:flex-row items-center gap-2 md:gap-8">
