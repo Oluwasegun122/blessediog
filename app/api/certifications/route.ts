@@ -49,80 +49,43 @@ const certifications = [
   },
 
   {
-    id: 3,
-    title: "Cloud Architecture Professional",
-    issuer: "AWS",
-    date: "May 2023",
-    image: "/images/Faith Obajafa certificate_3.jpg",
-    fileType: "image",
-    credentialId: "AWS-CAP-2023-7421",
-    description: `Validates expertise in designing distributed systems on AWS, covering:
-    • Infrastructure as Code (Terraform)
-    • Serverless architecture patterns
-    • CI/CD pipeline implementation
-    • Containerization with ECS/EKS
-    • Security best practices
-    
-    Demonstrated through:
-    - Migration of monolithic app to microservices
-    - Auto-scaling load-balanced architecture
-    - Disaster recovery solution design
-    - Cost optimization strategies`,
-  },
-  {
     id: 4,
     title: "Human Resource Management Certification",
     issuer: "LA PLAGE META VERSE",
     date: "April 2025",
-    image: "/images/Faith Obajafa certificate_2.jpg",
+    image: "/images/06f604d4-f746-4a16-a2ec-6deeb34eba41.jpg",
     fileType: "image",
     credentialId: "1969017",
     description: `
-      Description:
-      Validates expertise in human resource functions and strategic people management, covering:
-
-        - Recruitment and selection
-        - Performance management
-        - Employee engagement
-        - Organizational behavior
-        - Conflict resolution
-
-      Demonstrated through:
-        - Talent acquisition and management
-        - Performance management and optimization
-        - Organizational development and growth
-        - Employee relations and engagement strategies
-
-      **Professional Relevance:**
-        This certification demonstrates my ability to align human capital strategies 
-        with organizational goals, promoting sustainable growth and employee 
-        satisfaction. I am equipped to foster effective workplace environments 
-        and drive organizational success through strategic people management.`,
-  },
-  {
-    id: 3,
-    title: "Master Emotional Intelligence",
-    issuer: "Grovo",
-    date: "May 2023",
-    image: "/images/Faith Obajafa certificate_4.jpg",
-    fileType: "image",
-    credentialId: "AWS-CAP-2023-7421",
-    description: `
       Core Competencies:
-          - Self-awareness
-          - Self-regulation
-          - Social awareness
-          - Relationship management
-
-      Professional Relevance:
-          This certification demonstrates my commitment to developing emotional 
-          intelligence, a crucial skill for effective leadership, teamwork, and 
-          overall success. By understanding and managing my own emotions, as well 
-          as recognizing and influencing the emotions of others, I am equipped to 
-          navigate complex social dynamics and drive personal and professional 
-          growth. This certification showcases my dedication to self-improvement 
-          and my ability to build strong relationships, making me a valuable asset 
-          to any organization.`,
+          - Recruitment and selection processes
+          - Performance management systems
+          - Employee engagement strategies
+          - Organizational behavior analysis
+          - Workplace conflict resolution
+  
+      Practical Applications:
+          - Designing effective talent acquisition pipelines
+          - Implementing performance optimization frameworks
+          - Developing organizational growth initiatives
+          - Executing employee relations programs
+          - Measuring and improving workplace satisfaction
+  
+      Professional Validation:
+          This certification from LA PLAGE META VERSE validates my comprehensive
+          understanding of modern HR practices and strategic people management.
+          It demonstrates my ability to:
+          - Align human capital strategies with business objectives
+          - Develop data-driven HR solutions
+          - Foster inclusive and productive work environments
+          - Bridge organizational strategy with employee needs
+          - Implement contemporary HR technologies and methodologies
+  
+      Industry Recognition:
+          As an accredited HR certification, it positions me as a professional
+          capable of transforming human resources into competitive advantage,
+          with verified skills in both operational HR functions and strategic
+          workforce planning.`,
   },
   {
     id: 6,
@@ -154,6 +117,152 @@ const certifications = [
         as recognizing and influencing the emotions of others, I am equipped to 
         drive personal and professional growth and make a valuable contribution 
         to any organization.`,
+  },
+  {
+    id: 7,
+    title: "Introduction to Business and Data Analysis",
+    issuer: "MTF Institute of Management, Technology and Finance (via Udemy)",
+    date: "April 12, 2025",
+    image: "/images/06f604d4-f746-4a16-a2ec-6deeb34eba41.jpg", // You'll need to add this image
+    fileType: "image",
+    credentialId: "UT-BDA-2025-116",
+    description: `
+      Course Coverage:
+          - Business process understanding
+          - Basic data analytics principles
+          - Practical interpretation of business data
+  
+      Demonstrated Skills:
+          - Structured approach to solving real-world business problems
+          - Application of analytical tools for informed decision-making
+          - Effective presentation of data-driven insights
+  
+      Professional Value:
+          This certification validates my foundational knowledge in business analysis
+          and data interpretation, equipping me with essential skills to bridge the
+          gap between business needs and data solutions. The credential demonstrates
+          my ability to analyze business processes and translate data into actionable
+          insights, making me better prepared to support data-informed business
+          strategies.`,
+  },
+  {
+    id: 8,
+    title: "Data Quality, Data Management & Data Governance Certificate",
+    issuer: "MTF Institute of Management, Technology and Finance (via Udemy)",
+    date: "April 12, 2025",
+    image: "/images/DATA MANAGEMENT FAITH OBAJAFA (3).jpg", // Update with your actual image path
+    fileType: "image",
+    credentialId: "UT-DMQ-2025-109",
+    description: `
+      Core Competencies:
+          - Data lifecycle management principles
+          - Implementation of data quality frameworks
+          - Governance strategies for reliable and secure data systems
+  
+      Demonstrated Capabilities:
+          - Execution of data quality assurance techniques
+          - Structuring data systems for consistency and accessibility
+          - Application of governance practices aligned with industry standards
+  
+      Professional Value:
+          This certification validates my expertise in establishing and maintaining
+          high-quality data systems through proven governance frameworks. It demonstrates
+          my ability to implement data quality controls, design efficient data management
+          processes, and ensure compliance with industry best practices - critical skills
+          for any data-driven organization. The credential positions me as a professional
+          capable of transforming raw data into trustworthy business assets through
+          systematic governance approaches.`,
+  },
+  {
+    id: 9,
+    title: "Basic Financial Education Certification",
+    issuer: "Kudimata",
+    date: "December 13, 2024",
+    image: "/images/financial_education_certificate.jpg", // Update with your actual image path
+    fileType: "image",
+    credentialId: "A0813B564B",
+    description: `
+      Program Focus:
+          - Core financial literacy principles
+          - Personal finance management techniques
+          - Strategic financial planning methodologies
+  
+      Key Competencies:
+          - Budget creation and management
+          - Debt and risk management
+          - Investment fundamentals
+          - Retirement planning strategies
+          - Financial goal setting
+  
+      Institutional Recognition:
+          Sponsored by: NNPC Foundation
+          Endorsed by:
+          - Kathleen Erhimu, Founder/GMD of Kudimata
+          - Brig Gen YD Ahmed, Director General of NYSC
+          - Emmanuella N. Arukwe, MD/CEO of NNPC Foundation
+  
+      Professional Application:
+          This certification validates my ability to:
+          - Make informed personal and professional financial decisions
+          - Develop long-term financial stability plans
+          - Analyze financial products and services
+          - Apply financial concepts to real-world situations
+          - Guide others in financial literacy matters
+  
+      Certification Value:
+          Recognized credential demonstrating comprehensive understanding of
+          financial fundamentals, endorsed by national financial and youth
+          development organizations. Equips holders to navigate complex
+          financial landscapes with confidence.`,
+  },
+  {
+    id: 10,
+    title: "Performance Management with Generative AI for HR & Managers",
+    issuer: "Mike Pritula (via Udemy)",
+    date: "April 12, 2025",
+    image: "/images/performance_management_ai_certificate.jpg",
+    fileType: "image",
+    credentialId: "UT-PMAI-2025-0421",
+    description: `
+      Course Verification:
+        - Successfully completed all course requirements
+        - Full course completion validated by Udemy
+        - 52 minutes of core video instruction
+        - Part of Udemy's official certification catalog
+  
+      Instructor Credentials:
+        - Mike Pritula (SHRM, HRCI certified instructor)
+        - 52,000+ professionals trained worldwide
+        - 4.5★ average rating from 2000+ reviews
+        - Creator of 130+ HR and AI courses including:
+          * HRCI certification prep
+          * AI for Human Resources
+          * HR Analytics
+          * ChatGPT for HR professionals
+          * Advanced Recruiting techniques
+          * Compensation & Benefits strategies
+  
+      Curriculum Coverage:
+        - Generative AI applications in performance reviews
+        - Automated HR analytics processes
+        - AI-driven employee development plans
+        - ChatGPT for HR documentation
+        - Data-driven compensation analysis
+  
+      Skills Validation:
+        This certificate verifies my ability to:
+        - Integrate generative AI into performance management
+        - Automate routine HR evaluation processes
+        - Develop AI-enhanced employee feedback systems
+        - Implement data-driven performance metrics
+        - Optimize HR workflows with AI tools
+  
+      Professional Recognition:
+        Earned from Udemy's premier HR technology program,
+        this certification demonstrates cutting-edge competencies
+        in merging traditional HR practices with AI innovation.`,
+    verificationUrl:
+      "https://www.udemy.com/certificate/verify/UT-PMAI-2025-0421",
   },
 ];
 export async function GET() {

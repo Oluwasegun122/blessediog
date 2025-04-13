@@ -10,7 +10,7 @@ const Footer = () => {
         <div>
           <h2 className="text-lg font-bold">Contact Me</h2>
           <p className="text-sm">Email: faithobajafa@email.com</p>
-          <p className="text-sm">Phone: +123 706 5316</p>
+          <p className="text-sm">Phone: +234 706 769 5316</p>
           <p className="text-sm">Location: Lagos, Nigeria</p>
         </div>
 
@@ -52,7 +52,7 @@ const Footer = () => {
               <FaTwitter />
             </Link>
             <Link
-              href="https://www.linkedin.com/in/faith-obajafa"
+              href="https://linkedin.com/in/faith-obajafa"
               className="hover:text-gray-300"
             >
               <FaLinkedin />
@@ -63,7 +63,7 @@ const Footer = () => {
           </div>
         </div>
         <div>
-          <h2 className="text-lg font-bold">Documents</h2>
+          <h2 className="text-lg font-bold hidden mb:block">Documents</h2>
           <div className="flex justify-center md:justify-start space-x-4 text-xl">
             <DocumentModal
               triggerType="link"

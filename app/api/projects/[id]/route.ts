@@ -237,6 +237,65 @@ export async function GET(
       date: "2024-02-10",
       githubUrl: "https://github.com/BLESSEDIOG/hotel-booking-analysis",
     },
+    {
+      id: "5",
+      title: "Bike Sales Analysis Dashboard",
+      image: "/images/bike_sales_dashboard.png",
+      description:
+        "Power BI dashboard analyzing $95M in bike sales to identify profitable products, customer segments, and regional performance.",
+      contents: `PROJECT OVERVIEW:
+    Interactive dashboard providing strategic insights for a bike retail business through comprehensive sales performance analysis.
+    
+    KEY METRICS:
+    • Revenue: $95M
+    • Profit: $42M (44.26% margin)
+    • Units Sold: 1M+
+    • Customers: 113K
+    
+    TOP INSIGHTS:
+    • Geographic Performance:
+      - #1 United States (highest revenue/profit)
+      - #2 Australia
+      - #3 UK
+    • Customer Analysis:
+      - Dominant demographic: Males aged 35-64
+    • Product Performance:
+      - Top Product: Mountain-200 Black ($1.3M profit)
+      - Low Performers: Mountain-500 Black, Touring-3000 Yellow
+    • Subcategory Trends:
+      - Most Profitable: Road bikes, Mountain bikes
+      - Least Profitable: Accessories (racks/stands)
+    
+    TECHNICAL IMPLEMENTATION:
+    • Dashboard Features:
+      - Interactive country/year filters
+      - Top/Bottom 5 product comparisons
+      - Demographic segmentation visuals
+      - Profitability heatmaps
+    • Visual Components:
+      - Executive KPI cards
+      - Geographic profit/revenue maps
+      - Age/gender distribution charts
+      - Product performance matrices
+    
+    BUSINESS IMPACT:
+    Enables data-driven decisions for:
+    - Product line optimization
+    - Market focus strategies
+    - Customer targeting
+    - Inventory management`,
+      slug: "bike-sales-dashboard",
+      tags: [
+        "Power BI",
+        "Sales Analytics",
+        "Retail",
+        "Profit Analysis",
+        "Data Visualization",
+        "Business Intelligence",
+      ],
+      date: "2024-03-15",
+      githubUrl: "https://github.com/BLESSEDIOG/bike-sales-analysis",
+    },
   ];
 
   const project = mockProjects.find((p) => p.id === id);

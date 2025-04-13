@@ -75,7 +75,7 @@ const AboutPage = () => {
       <div className="max-w-6xl mx-auto px-5 py-10 mt-10">
         {/* Introduction Section */}
         <section className="mb-16">
-          <div className="flex flex-col md:flex-row items-center gap-8">
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-8">
             {data.avatar && (
               <div className="w-48 h-48 md:w-64 md:h-64 relative rounded-full overflow-hidden border-4 border-primary shadow-lg">
                 <Image

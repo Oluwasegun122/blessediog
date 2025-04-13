@@ -45,6 +45,22 @@ const projects = [
     date: "2024-02-10",
     githubUrl: "https://github.com/BLESSEDIOG/hotel-booking-analysis",
   },
+  {
+    id: "5",
+    title: "Bike Sales Analysis Dashboard",
+    image: "/images/bike_sales_dashboard.jpg",
+    description:
+      "Power BI dashboard analyzing $95M in bike sales to identify profitable products and customer segments.",
+    slug: "bike-sales-dashboard",
+    tags: [
+      "Power BI",
+      "Retail Analytics",
+      "Profit Analysis",
+      "Sales Visualization",
+    ],
+    date: "2024-03-15",
+    githubUrl: "https://github.com/BLESSEDIOG/bike-sales-analysis",
+  },
 ];
 
 export async function GET() {

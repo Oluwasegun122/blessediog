@@ -108,7 +108,7 @@ export default function ContactPage() {
                   href="tel:+1237065316"
                   className="text-gray-600 hover:text-green-600 transition-colors"
                 >
-                  +123 706 5316
+                  +234 706 769 5316
                 </a>
               </div>
             </div>

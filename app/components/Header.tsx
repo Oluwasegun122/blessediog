@@ -107,7 +107,7 @@ const Header = () => {
             About Me
           </Link>
           <Link
-            href="#"
+            href="/contact"
             className="text-gray-700 hover:text-purple-600 font-medium py-2 border-b border-gray-100"
             onClick={() => setIsOpen(false)}
           >
