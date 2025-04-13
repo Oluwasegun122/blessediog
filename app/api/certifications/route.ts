@@ -150,7 +150,7 @@ const certifications = [
     title: "Data Quality, Data Management & Data Governance Certificate",
     issuer: "MTF Institute of Management, Technology and Finance (via Udemy)",
     date: "April 12, 2025",
-    image: "/images/f9a13753-0f65-4db2-878c-1ee8d78ca9ac.jpg", // Update with your actual image path
+    image: "/images/4d0584aa-32c6-45b6-a794-c2f6999d8cfd.jpg", // Update with your actual image path
     fileType: "image",
     credentialId: "UT-DMQ-2025-109",
     description: `
