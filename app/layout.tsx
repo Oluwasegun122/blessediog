@@ -14,34 +14,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Faith Dasola Obajafa | Data Analyst & AI Specialist Portfolio",
+  title: "Faith Dasola Obajafa | Data Analyst Portfolio",
   description:
-    "Data professional specializing in Power BI dashboards, machine learning models (85% accuracy), and AI-powered HR solutions. Featured projects: Bank Churn Prediction, Rocket Launch Analytics, and Hotel Revenue Optimization.",
-  keywords: [
-    "data analyst",
-    "Power BI",
-    "machine learning",
-    "AI solutions",
-    "data visualization",
-    "HR analytics",
-    "portfolio",
-  ],
-  authors: [{ name: "Faith Dasola Obajafa" }],
-  openGraph: {
-    type: "website",
-    url: "https://blessediog.vercel.app/", // Replace with your actual domain
-    title: "Faith Obajafa | Data & AI Projects",
-    description:
-      "Explore data analysis projects and AI solutions by Faith Obajafa",
-    // images: [
-    //   {
-    //     url: "https://yourportfolio.com/og-image.jpg", // Add an OpenGraph image
-    //     width: 1200,
-    //     height: 630,
-    //     alt: "Faith Obajafa Portfolio Preview",
-    //   }
-    // ],
-  },
+    "Data professional specializing in Power BI dashboards, machine learning models, and data-driven solutions. Explore projects in banking, aerospace, and hospitality analytics.",
+  keywords:
+    "data analysis, Power BI, SQL, Python, data visualization, portfolio",
+  authors: { name: "Faith Dasola Obajafa" },
 };
 
 export default function RootLayout({
@@ -55,9 +33,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-200`}
       >
         <Header />
-        <main className="min-h-screen">
+        <main className="min-h-screen pt-16">
           {" "}
-          {/* Wrap content in <main> */}
+          {/* Added padding for fixed header */}
           {children}
         </main>
       </body>
