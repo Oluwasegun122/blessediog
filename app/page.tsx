@@ -35,10 +35,9 @@ export default function Home() {
 
           <p className="text-lg md:text-xl lg:text-2xl mb-8 text-gray-300 leading-relaxed opacity-80 animate-slideUp [animation-fill-mode:forwards] [animation-delay:200ms]">
             I use cutting-edge tools and techniques
-            <br className="hidden gap-1 md:gap-0 sm:block" />
-            to turn complex data sets into actionable
-            <br className="hidden gap-1 md:gap-0 sm:block" />
-            insights.
+            <br className="hidden sm:block" /> to turn complex data sets into
+            actionable
+            <br className="hidden sm:block" /> insights.
           </p>
 
           <div className="opacity-80 animate-slideUp [animation-fill-mode:forwards] [animation-delay:400ms]">
