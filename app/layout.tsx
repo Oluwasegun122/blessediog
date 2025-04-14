@@ -14,9 +14,34 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Faith Dasola Obajafa Portfoilio",
+  title: "Faith Dasola Obajafa | Data Analyst & AI Specialist Portfolio",
   description:
-    "Faith Obajafa | Data Solutions Portfolio. Featured projects: [Bank Churn Prediction (85% accuracy)], [AI HR Performance Dashboard], [Data Governance Framework]. Certified: Power BI, AWS Cloud, Generative AI. Transforming raw data into strategic decisions.",
+    "Data professional specializing in Power BI dashboards, machine learning models (85% accuracy), and AI-powered HR solutions. Featured projects: Bank Churn Prediction, Rocket Launch Analytics, and Hotel Revenue Optimization.",
+  keywords: [
+    "data analyst",
+    "Power BI",
+    "machine learning",
+    "AI solutions",
+    "data visualization",
+    "HR analytics",
+    "portfolio",
+  ],
+  authors: [{ name: "Faith Dasola Obajafa" }],
+  openGraph: {
+    type: "website",
+    url: "https://blessediog.vercel.app/", // Replace with your actual domain
+    title: "Faith Obajafa | Data & AI Projects",
+    description:
+      "Explore data analysis projects and AI solutions by Faith Obajafa",
+    // images: [
+    //   {
+    //     url: "https://yourportfolio.com/og-image.jpg", // Add an OpenGraph image
+    //     width: 1200,
+    //     height: 630,
+    //     alt: "Faith Obajafa Portfolio Preview",
+    //   }
+    // ],
+  },
 };
 
 export default function RootLayout({
@@ -25,12 +50,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-200`}
       >
         <Header />
-        <div className=" top-0 scroll-m-0">{children}</div>
+        <main className="min-h-screen">
+          {" "}
+          {/* Wrap content in <main> */}
+          {children}
+        </main>
       </body>
     </html>
   );
