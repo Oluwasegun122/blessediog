@@ -319,7 +319,7 @@ const AboutPage = () => {
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             <a
               href={`mailto:${data.contact.email}`}
-              className="px-6 py-3 bg-gray text-white rounded-lg hover:bg-primary-dark transition-colors flex items-center"
+              className="px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-primary-dark transition-colors flex items-center"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
